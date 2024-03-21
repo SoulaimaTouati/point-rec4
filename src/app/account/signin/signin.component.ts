@@ -31,7 +31,8 @@ export class SigninComponent {
       }
     }, error => {
       console.error('Erreur lors de la connexion :', error);
-      // Gérer les erreurs d'authentification ici
+
+      
     });
   }
 }
