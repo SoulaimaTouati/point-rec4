@@ -1,0 +1,48 @@
+body {
+    background-color: white; /* Changer la couleur de fond de toute la page */
+}
+#form-1 {
+    border: 2px solid black;
+    padding: 5px;
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: auto; /* Ajustez la hauteur selon vos besoins */
+    background-color: rgb(249, 248, 248);
+}
+
+.form-control {
+    width: 250px;
+    border: 2px solid black;
+    text-align: center;
+    margin: 0 auto;
+    text-emphasis-color: black;
+}
+
+.btn-container {
+    text-align: center;
+    width: 250px;
+    margin: 0 auto; /* pour les placer au centre */
+}
+
+.mb-4 {
+    text-align: center;
+}
+.mb-3 {
+    text-align: center;
+    font-weight: bold;
+}
+
+.form-select {
+    text-align: center;
+    border: 2px solid black;
+    width: 250px;
+    margin: 0 auto; /* Centrer horizontalement */
+    font-weight: bold;
+}
