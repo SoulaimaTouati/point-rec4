@@ -13,6 +13,17 @@ import { AdminplateformeComponent } from './espaceadminplateforme/adminplateform
 import { AdminpointrlaisComponent } from './espaceadminpointrelais/adminpointrlais/adminpointrlais.component';
 import { AgentpointrelaisComponent } from './espaceagentpointrelais/agentpointrelais/agentpointrelais.component';
 import { SigninComponent } from './account/signin/signin.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDialogModule } from '@angular/material/dialog';
+import { SuiviColisComponent } from './suivi-colis/suivi-colis/suivi-colis.component';
+import { PointrelaisComponent } from './espaceadminplateforme/pointrelais/pointrelais.component';
+import { SidebarComponent } from './espaceadminplateforme/sidebar/sidebar.component';
+import { AddadminplateformeComponent } from './espaceadminplateforme/addadminplateforme/addadminplateforme.component';
+import { AdminpointrelaisComponent } from './espaceadminplateforme/adminpointrelais/adminpointrelais.component';
+
+
+
 
 @NgModule({
   declarations: [
@@ -22,7 +33,15 @@ import { SigninComponent } from './account/signin/signin.component';
     AdminplateformeComponent,
     SigninComponent,
     AdminpointrlaisComponent,
-    AgentpointrelaisComponent
+    AgentpointrelaisComponent,
+    SuiviColisComponent,
+    PointrelaisComponent,
+    SidebarComponent,
+    AddadminplateformeComponent,
+    AgentpointrelaisComponent,
+    AdminpointrelaisComponent,
+    PointrelaisComponent,
+  
   ],
   imports: [
     BrowserModule,
@@ -31,6 +50,10 @@ import { SigninComponent } from './account/signin/signin.component';
     CommonModule,
     HttpClientModule,FormsModule,
     FormsModule,
+    MatSnackBarModule,
+    BrowserAnimationsModule,
+    MatDialogModule,
+    
   ],
   providers: [
   

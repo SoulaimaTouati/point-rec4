@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+/*import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SuiviColisComponent } from './suivi-colis/suivi-colis.component';
 
@@ -13,3 +13,4 @@ import { SuiviColisComponent } from './suivi-colis/suivi-colis.component';
   ]
 })
 export class SuiviColisModule { }
+*/

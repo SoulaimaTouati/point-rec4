@@ -10,9 +10,9 @@ import { AdminPlateforme } from '../interface/admin-plateforme';
 })
 export class AuthentificationService {
 
-
-  private adminplateforme = 'http://localhost:3000/authentification/adminplateforme';  // URL de monAPI
-  private loginy = 'http://localhost:3000/authentification/login';  // URL de monAPI
+// URL de monAPI
+  private adminplateforme = 'http://localhost:3000/authentification/adminplateforme';  
+  private loginy = 'http://localhost:3000/authentification/login';  
 
 
 

@@ -1,5 +1,6 @@
 body {
-    background-color: white; /* Changer la couleur de fond de toute la page */
+    /*couleur de fond de toute la page */
+    background-color: white;
 }
 #form-1 {
     border: 2px solid black;
@@ -13,7 +14,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    height: auto; /* Ajustez la hauteur selon vos besoins */
+    height: auto; 
     background-color: rgb(249, 248, 248);
 }
 
@@ -28,7 +29,8 @@ body {
 .btn-container {
     text-align: center;
     width: 250px;
-    margin: 0 auto; /* pour les placer au centre */
+    /* pour les placer au centre */
+    margin: 0 auto; 
 }
 
 .mb-4 {
@@ -43,6 +45,12 @@ body {
     text-align: center;
     border: 2px solid black;
     width: 250px;
-    margin: 0 auto; /* Centrer horizontalement */
+    /* Centrer horizontalement */
+    margin: 0 auto; 
     font-weight: bold;
+}
+.alert-danger{
+    font-size: 12px;
+    padding: 5px;
+    margin-bottom: 5px;
 }

@@ -5,6 +5,9 @@ import { SigninComponent } from './account/signin/signin.component';
 import { AdminplateformeComponent } from './espaceadminplateforme/adminplateforme/adminplateforme.component';
 import { AdminpointrlaisComponent } from './espaceadminpointrelais/adminpointrlais/adminpointrlais.component';
 import { AgentpointrelaisComponent } from './espaceagentpointrelais/agentpointrelais/agentpointrelais.component';
+import { PointrelaisComponent } from './espaceadminplateforme/pointrelais/pointrelais.component';
+import { AddadminplateformeComponent } from './espaceadminplateforme/addadminplateforme/addadminplateforme.component';
+import { AdminpointrelaisComponent } from './espaceadminplateforme/adminpointrelais/adminpointrelais.component';
 
 const routes: Routes = [
   {path:'suivis-colis',component:SuiviColisComponent},
@@ -12,6 +15,9 @@ const routes: Routes = [
   {path:'adminplateforme',component:AdminplateformeComponent},
   {path:'adminpointrlais',component:AdminpointrlaisComponent},
   {path:'agentpointrelais',component:AgentpointrelaisComponent},
+  {path:'pointrelais',component:PointrelaisComponent},
+  {path:'addadminp',component:AddadminplateformeComponent},
+  {path:'adminPr',component:AdminpointrelaisComponent},
 ];
 
 

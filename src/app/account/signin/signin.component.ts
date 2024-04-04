@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { AuthentificationService } from '../../services/authentification.service';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar'; 
 
 
 @Component({
@@ -11,7 +12,7 @@ import { NgForm } from '@angular/forms';
   styleUrl: './signin.component.css'
 })
 export class SigninComponent {
-  constructor(private authentificationService: AuthentificationService, private router: Router) {}
+  constructor(private authentificationService: AuthentificationService, private router: Router,private snackBar:MatSnackBar) {}
 
   onSubmit(form: NgForm) {
     const { username, password, selectedRole } = form.value;
@@ -26,9 +27,10 @@ export class SigninComponent {
         }
       } else {
         console.error('Erreur lors de la connexion :', response.message);
-        
-        // Afficher un message d'erreur à l'utilisateur
-      }
+        this.snackBar.open('veuillez remplir tous les champs.', 'Fermer', {
+          // Durée d'affichage du message en ms
+          duration: 3000 
+        });      }
     }, error => {
       console.error('Erreur lors de la connexion :', error);
 
