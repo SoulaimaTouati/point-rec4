@@ -1,5 +1,5 @@
 export interface AdminPointRelais {
-  id: number;
+  idadminpointrelais: number;
   nom: string;
   prenom: string;
   numerotelephone: string;

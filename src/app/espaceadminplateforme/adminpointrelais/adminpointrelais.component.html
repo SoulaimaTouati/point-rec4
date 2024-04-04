@@ -16,33 +16,59 @@
                 <input type="text" name="name" placeholder="Rechercher">
             </div>
             <div>
-                <h2>Liste des responsables des points relais</h2>
-                <table class="table">
-                    <thead>
-                      <tr>
-                        <th>Nom</th>
-                        <th>Prénom</th>
-                        <th>Numéro de téléphone</th>
-                        <th>Numéro(s) Point Relais</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <ng-container *ngFor="let admin of adminPointRelaisList; let i=index">
-                        <tr *ngIf="i === 0 || admin.nom !== adminPointRelaisList[i-1].nom">
-                          <td [attr.rowspan]="countRows(admin.nom)">{{ admin.nom }}</td>
-                          <td [attr.rowspan]="countPrenomRows(admin.nom, admin.prenom)">{{ admin.prenom }}</td>
-                          <td [attr.rowspan]="countTelephoneRows(admin.nom, admin.prenom, admin.numerotelephone)">{{ admin.numerotelephone }}</td>
-                          <td>{{ admin.num_pointrelais }}</td>
-                        </tr>
-                        <tr *ngIf="i !== 0 && admin.nom === adminPointRelaisList[i-1].nom && admin.prenom === adminPointRelaisList[i-1].prenom">
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                          <td>{{ admin.num_pointrelais }}</td>
-                        </tr>
-                      </ng-container>
-                    </tbody>
-                  </table>                  
+                <!-- adminpointrelais.component.html -->
+
+<h2>Liste des responsables des points relais</h2>
+<table class="table">
+  <thead>
+    <tr>
+        <th>id</th>
+      <th>Nom</th>
+      <th>Prénom</th>
+      <th>Numéro de téléphone</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let admin of adminPointRelaisList">
+        <td>{{ admin.idadminpointrelais }}</td>
+      <td>{{ admin.nom }}</td>
+      <td>{{ admin.prenom }}</td>
+      <td>{{ admin.numerotelephone }}</td>
+      <td><button (click)="consulterPointsRelais(admin.idadminpointrelais)">Consulter Points Relais</button></td>
+    </tr>
+  </tbody>
+</table>
+
+<div *ngIf="afficherPointsRelais">
+    <h2>Liste des points relais associés à l'administrateur: {{name}} {{lastname}}</h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Numéro du point relais</th>
+      <th>Adresse</th>
+      <th>Numéro de téléphone</th>
+      <th>Capacité maximale</th>
+      <th>Taux de saturation</th>
+      <th>Nom de l'agent</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let pointRelais of pointsRelais">
+      <td>{{ pointRelais.num_pointrelais }}</td>
+      <td>{{ pointRelais.adresse }}</td>
+      <td>{{ pointRelais.num_telephone }}</td>
+      <td>{{ pointRelais.capacite_max }}</td>
+      <td>{{ pointRelais.taux_saturation }}</td>
+      <td>{{ pointRelais.nom_agent }}</td>
+    </tr>
+  </tbody>
+</table>
+
+    
+  </div>
+  
+ 
               
               </div>
               

@@ -1,6 +1,7 @@
 import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
 import { AdminPointRelais } from '../../interface/adminpointrelais';
 import { AdminPointRelaisService } from '../../services/adminpointrelais.service';
+import { PointRelais } from '../../interface/pointrelais';
 
 @Component({
   selector: 'app-adminpointrelais',
@@ -9,6 +10,15 @@ import { AdminPointRelaisService } from '../../services/adminpointrelais.service
 })
 export class AdminpointrelaisComponent implements OnInit {
   adminPointRelaisList: AdminPointRelais[] = [];
+  pointsRelais: PointRelais[] = [];
+  afficherPointsRelais: boolean = false;
+  admin: AdminPointRelais | null = null; // Déclarer la propriété admin
+  name='';
+  lastname='';
+
+
+
+
 
   constructor(private adminPointRelaisService: AdminPointRelaisService) {}
   
@@ -16,6 +26,8 @@ export class AdminpointrelaisComponent implements OnInit {
     this.loadAdminPointRelais();
   }
 
+
+  
 
   loadAdminPointRelais(): void {
     this.adminPointRelaisService.getAllAdminPointRelais().subscribe(
@@ -29,9 +41,10 @@ export class AdminpointrelaisComponent implements OnInit {
   }
 
 
-  countRows(name: string): number {
+
+  /*countRows(name: string): number {
     return this.adminPointRelaisList.filter(admin => admin.nom === name).length;
-  }
+  
 
   countPrenomRows(nom: string, prenom: string): number {
     let count = 1;
@@ -52,7 +65,7 @@ export class AdminpointrelaisComponent implements OnInit {
       }
     }
     return count;
-  }
+  }*/
   
 
   @ViewChild('btnToggleForm') btnToggleForm!: ElementRef;
@@ -77,4 +90,28 @@ export class AdminpointrelaisComponent implements OnInit {
     console.log('Nom:', this.nom);
     console.log('Prénom:', this.prenom);
   }
+
+  consulterPointsRelais(idadminpointrelais: number): void {
+    this.adminPointRelaisService.getPointRelaisByAdminId(idadminpointrelais).subscribe(
+      (data: PointRelais[]) => {
+        console.log('Points relais associés à l\'ID de l\'admin:', data);
+        this.pointsRelais = data;
+        this.afficherPointsRelais = true;
+          const admin = this.adminPointRelaisList.find(admin => admin.idadminpointrelais === idadminpointrelais);
+        if (admin) {
+          console.log('Liste des points relais associés à l\'administrateur :', admin.nom , admin.prenom);
+          this.name=admin.nom;
+          this.lastname=admin.prenom
+        }
+  
+        // Traitez les données des points relais ici, par exemple, les afficher dans votre template HTML
+      },
+      (error) => {
+        console.log('Erreur lors de la récupération des points relais associés à l\'ID de l\'admin :', error);
+      }
+    );
+    console.log('ID de l\'admin point relais:', idadminpointrelais);
+    // Vous pouvez appeler une méthode du service pour récupérer les points relais associés à cet ID ici
+  }
+  
 }
