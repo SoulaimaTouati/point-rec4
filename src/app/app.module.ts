@@ -21,6 +21,9 @@ import { PointrelaisComponent } from './espaceadminplateforme/pointrelais/pointr
 import { SidebarComponent } from './espaceadminplateforme/sidebar/sidebar.component';
 import { AddadminplateformeComponent } from './espaceadminplateforme/addadminplateforme/addadminplateforme.component';
 import { AdminpointrelaisComponent } from './espaceadminplateforme/adminpointrelais/adminpointrelais.component';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { AffecteradminpointrelaisComponent } from './espaceadminplateforme/affecteradminpointrelais/affecteradminpointrelais.component';
+import { OptionsComponent } from './espaceadminplateforme/Options/options.component';
 
 
 
@@ -41,7 +44,8 @@ import { AdminpointrelaisComponent } from './espaceadminplateforme/adminpointrel
     AgentpointrelaisComponent,
     AdminpointrelaisComponent,
     PointrelaisComponent,
-  
+    AffecteradminpointrelaisComponent,
+    OptionsComponent, 
   ],
   imports: [
     BrowserModule,
@@ -53,11 +57,13 @@ import { AdminpointrelaisComponent } from './espaceadminplateforme/adminpointrel
     MatSnackBarModule,
     BrowserAnimationsModule,
     MatDialogModule,
+
     
   ],
   providers: [
   
-    provideClientHydration()
+    provideClientHydration(),
+        provideAnimationsAsync()
   ],
   bootstrap: [AppComponent]
 })

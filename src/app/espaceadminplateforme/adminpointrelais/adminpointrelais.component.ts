@@ -15,9 +15,7 @@ export class AdminpointrelaisComponent implements OnInit {
   admin: AdminPointRelais | null = null; // Déclarer la propriété admin
   name='';
   lastname='';
-
-
-
+  searchQuery: string = '';
 
 
   constructor(private adminPointRelaisService: AdminPointRelaisService) {}
@@ -76,13 +74,10 @@ export class AdminpointrelaisComponent implements OnInit {
   numerotelephone:number= 0;
   motdepasse:string='';
 
+
   toggleFormulaire(): void {
     this.afficherFormulaire = !this.afficherFormulaire;
-    /*if (this.afficherFormulaire) {
-      // retir le focus
-
-      this.btnToggleForm.nativeElement.blur();
-    }*/
+ 
   }
 
   ajouterResponsable(): void {
@@ -112,6 +107,24 @@ export class AdminpointrelaisComponent implements OnInit {
     );
     console.log('ID de l\'admin point relais:', idadminpointrelais);
     // Vous pouvez appeler une méthode du service pour récupérer les points relais associés à cet ID ici
+  }
+
+
+  search(): void {
+    if (this.searchQuery.trim() !== '') {
+      this.adminPointRelaisService.searchAdminPointRelais(this.searchQuery).subscribe(
+        (response) => {
+          this.adminPointRelaisList = response;
+        },
+        (error) => {
+          console.error('Erreur lors de la recherche :', error);
+          // Gérez l'erreur ici, par exemple en affichant un message à l'utilisateur
+        }
+      );
+    } else {
+      // Si la requête de recherche est vide, réinitialisez la liste des administrateurs
+      this.adminPointRelaisList = [];
+    }
   }
   
 }

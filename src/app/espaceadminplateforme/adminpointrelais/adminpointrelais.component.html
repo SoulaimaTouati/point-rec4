@@ -1,28 +1,18 @@
-    <nav>
-        <i class="fa fa-bars"></i>
-        <ul>
-            <li><a href="adminplateforme"><i class="fa fa-home" aria-current="page"></i>Accueil</a></li>
-            <li><a href="/pointrelais"><i class="fa fa-suitcase"></i>Point Relais</a></li>
-            <li><a href="adminPr">Administrateur Point Relais</a></li>
-            <li><a href="addadminp">Administrateur Plate-forme</a></li>
-            <li><a href="options">Options</a></li>
-            <li><a href="dashboard">Consulter dashboard</a></li>
-            <li style="order: 999;"><a class="nav-link" href="espace administrative">Log Out</a></li>
-        </ul>
-    </nav>
+   <nav class=" sidebar">
+   <app-sidebar></app-sidebar>
+   <router-outlet></router-outlet>
+  </nav>
     <section class="s1">
         <div class="container">
-            <div class="btnrecherche">
-                <input type="text" name="name" placeholder="Rechercher">
-            </div>
+          <div class="btnrecherche">
+            <input type="text" name="searchQuery" [(ngModel)]="searchQuery" placeholder="Rechercher">
+            <button (click)="search()">Rechercher</button>
+          </div>
             <div>
-                <!-- adminpointrelais.component.html -->
-
 <h2>Liste des responsables des points relais</h2>
 <table class="table">
   <thead>
     <tr>
-        <th>id</th>
       <th>Nom</th>
       <th>Prénom</th>
       <th>Numéro de téléphone</th>
@@ -31,7 +21,6 @@
   </thead>
   <tbody>
     <tr *ngFor="let admin of adminPointRelaisList">
-        <td>{{ admin.idadminpointrelais }}</td>
       <td>{{ admin.nom }}</td>
       <td>{{ admin.prenom }}</td>
       <td>{{ admin.numerotelephone }}</td>
@@ -66,56 +55,7 @@
 </table>
 
     
-  </div>
-  
- 
-              
-              </div>
-              
-            <div>
-                si vous voulez affecter un nouveau responsable a un point rlais déterminer cliquer ici :
-                <!-- Bouton pour afficher/masquer le formulaire -->
-<br>
-                <button (click)="toggleFormulaire()" type="button">Affecter responsable point relais</button>
-            </div><br><br>
-            <div *ngIf="afficherFormulaire">
-                <form (submit)="ajouterResponsable()" class="form6">
-                    <div>
-                        <label for="idadminpointrelais">id</label>
-                        <input type="number" id="nom" name="idadminpointrelais" [(ngModel)]="idadminpointrelais" placeholder="id">
-                        
-                    </div><br>
-                    <div>
-                        <label for="nom">Nom</label>
-                        <input type="text" id="nom" name="nom" [(ngModel)]="nom" placeholder="Nom">
-                    </div><br>
-                    <div>
-                        <label for="prenom">Prénom</label>
-                        <input type="text" id="prenom" name="prenom" [(ngModel)]="prenom" placeholder="Prénom">
-                    </div><br>
-                    <div>
-                        <label for="numerotelephone">numero de téléphone</label>
-                        <input type="number" id="numerotelephone" name="numerotelephone" [(ngModel)]="numerotelephone" placeholder="numero de téléphone">
-                        
-                    </div><br>
-                    <div>
-                        <label for="motdepasse">Mot de passe </label>
-                        <input type="password" id="motdepasse" name="motdepasse" [(ngModel)]="motdepasse" placeholder="Mot de passe">
-                    </div><br>
-                    <div>
-                        <label for="num-pointrelais">Numéro du point relais à gérer :</label>
-                        <select id="num-pointrelais" name="num-pointrelais" >
-                            <option value="" disabled selected>Sélectionnez un point relais</option>
-
-                           <!-- *ngfor <option></option>--> 
-                        </select>
-                    </div>
-                    <br>
-                    <div>
-                        <button type="submit">Ajouter</button>
-                    </div>
-                </form>
+  </div>       
             </div>
-            
         </div>
     </section>

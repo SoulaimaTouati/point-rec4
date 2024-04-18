@@ -1,0 +1,39 @@
+.sidebar{
+    position: absolute;
+    top: auto; 
+    left: 0; 
+    height: 200vh; 
+    z-index: 999; 
+    }
+
+    section {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        position: absolute;
+        top: 0;
+        left: 270px;
+        height: 100vh;
+        width: calc(100% - 270px);
+        padding: 30px;
+        transition: ease-in 0.3s;
+      }
+      .s1{
+        padding: 100px;
+    }
+    .container{
+        /* largeur  */
+       width: 900px;
+       /* centre l'élément horizontalement en utilisant auto pour les marges gauche et droite */
+       margin: 0 auto; 
+       /* bordure de 2px en gras et noire */
+       border: 2px solid rgb(1, 1, 1) ; 
+       font-weight: bold; 
+       /* espacement intérieur de votre choix */
+       padding: 20px; 
+       /* centre le texte à l'intérieur de l'élément */
+       text-align: center; 
+       background-color: rgb(199, 195, 195);
+       
+     
+     }

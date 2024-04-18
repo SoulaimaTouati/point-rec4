@@ -99,3 +99,10 @@ nav li {
     align-items:flex-end;
     align-items: flex-start;
   }
+  .sidebar{
+    position: absolute;
+    top: auto; 
+    left: 0; 
+    height: 200vh; 
+    z-index: 999; 
+    }

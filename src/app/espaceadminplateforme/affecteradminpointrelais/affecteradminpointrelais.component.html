@@ -1,0 +1,47 @@
+<nav class=" sidebar">
+    <app-sidebar></app-sidebar>
+   </nav>
+
+   <section class="s1">
+    <div class="container">
+        <div>   
+            <h2>Choisir un Point Relais à consulter</h2>
+            <div>
+                <br>
+                <!-- Bouton pour afficher/masquer le formulaire -->
+            </div>
+            <br><br>
+            <div>
+                <form (submit)="ajouteradminpointrelais()" class="form6">
+                    <br>
+                    <div>
+                        <label for="nom">Nom</label>
+                        <input type="text" id="nom" name="nom" [(ngModel)]="nom" placeholder="Nom">
+                    </div><br>
+                    <div>
+                        <label for="prenom">Prénom</label>
+                        <input type="text" id="prenom" name="prenom" [(ngModel)]="prenom" placeholder="Prénom">
+                    </div><br>
+                    <div>
+                        <label for="numerotelephone">Numéro de téléphone</label>
+                        <input type="number" id="numerotelephone" name="numerotelephone" [(ngModel)]="numerotelephone" placeholder="Numéro de téléphone">
+                    </div><br>
+                    <div>
+                        <label for="motdepasse">Mot de passe</label>
+                        <input type="password" id="motdepasse" name="motdepasse" [(ngModel)]="motdepasse" placeholder="Mot de passe">
+                    </div><br>
+                    <div>
+                        <label for="num-pointrelais">Sélectionnez le point relais qu'il va gérer :</label>
+                        <select id="num-pointrelais" name="num-pointrelais" [(ngModel)]="selectedPointRelaisId">
+                            <option value="" disabled selected>Sélectionnez un point relais</option>
+                            <option *ngFor="let pointRelais of pointsRelaislist" [value]="pointRelais.id_pointrelais" >{{ pointRelais.adresse }}</option>
+                        </select>
+                    </div>
+                    <br>
+                    <button type="submit">Ajouter</button>
+                </form>
+            </div>
+        </div>
+    </div>
+        </section>     
+        

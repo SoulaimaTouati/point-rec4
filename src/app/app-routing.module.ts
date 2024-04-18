@@ -8,6 +8,8 @@ import { AgentpointrelaisComponent } from './espaceagentpointrelais/agentpointre
 import { PointrelaisComponent } from './espaceadminplateforme/pointrelais/pointrelais.component';
 import { AddadminplateformeComponent } from './espaceadminplateforme/addadminplateforme/addadminplateforme.component';
 import { AdminpointrelaisComponent } from './espaceadminplateforme/adminpointrelais/adminpointrelais.component';
+import { AffecteradminpointrelaisComponent } from './espaceadminplateforme/affecteradminpointrelais/affecteradminpointrelais.component';
+import { OptionsComponent } from './espaceadminplateforme/Options/options.component';
 
 const routes: Routes = [
   {path:'suivis-colis',component:SuiviColisComponent},
@@ -18,6 +20,9 @@ const routes: Routes = [
   {path:'pointrelais',component:PointrelaisComponent},
   {path:'addadminp',component:AddadminplateformeComponent},
   {path:'adminPr',component:AdminpointrelaisComponent},
+  {path:'affecteradminpointreais',component:AffecteradminpointrelaisComponent},
+  {path:'option',component:OptionsComponent},
+
 ];
 
 

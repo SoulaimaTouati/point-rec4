@@ -8,8 +8,8 @@ import { Observable } from 'rxjs';
 export class SuiviColisService {
 
   constructor(private http: HttpClient) { }
-  private suivre = 'http://localhost:3000';  // URL de mon API
-
+  private suivre = 'http://localhost:3000';  
+  
   suivreColis(numeroColis: number): Observable<string> {
     return this.http.get(`${this.suivre}/colis/${numeroColis}/adresse`, { responseType: 'text' });
 

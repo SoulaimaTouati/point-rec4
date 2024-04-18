@@ -1,0 +1,7 @@
+.sidebar{
+    position: absolute;
+    top: auto; 
+    left: 0; 
+    height: 200vh; 
+    z-index: 999; 
+    }
