@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { AprsidebarService } from '../../services/aprsidebar.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -6,7 +7,16 @@ import { Component } from '@angular/core';
 
   styleUrl: './sidebar.component.css'
 })
-export class SidebarComponent {
+export class SidebarComponent implements OnInit {
+  isOpen: boolean = true;
+
+  ngOnInit() {
+    // Souscrivez à l'observable isOpen$ pour écouter les changements de la valeur isOpen
+    this.aprsidebarservice.isOpen$.subscribe(isOpen => {
+      this.isOpen = isOpen;
+    });
+  }
+  constructor(private aprsidebarservice: AprsidebarService){}
   isCollapsed: boolean = false;
  isDropdownOpen: boolean = false;
 
@@ -17,5 +27,12 @@ export class SidebarComponent {
 
   toggleCollapse() {
     this.isCollapsed = !this.isCollapsed;
+  }
+
+  openSidebar() {
+    this.aprsidebarservice.openSidebar();
+  }
+  closeSidebar() {
+    this.aprsidebarservice.closeSidebar();
   }
 }

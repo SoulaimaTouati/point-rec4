@@ -5,3 +5,34 @@
     height: 200vh; 
     z-index: 999; 
     }
+
+.openbtn{
+    height: 6vh;
+    top: auto;
+    font-size: xx-large;
+    background-color: rgb(16, 35, 120);
+    color: white;
+
+}
+.openbtn:hover{
+    color: rgb(247, 111, 0);
+}
+
+.s1{
+    padding: 100px;
+}
+
+.container{
+    /* largeur  */
+   width: 900px;
+   /* centre l'élément horizontalement en utilisant auto pour les marges gauche et droite */
+   margin: 0 auto; 
+   /* bordure de 2px en gras et noire */
+   font-weight: bold; 
+   /* espacement intérieur de votre choix */
+   padding: 20px; 
+   /* centre le texte à l'intérieur de l'élément */
+   text-align: center; 
+   
+ 
+ }

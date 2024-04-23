@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
-
+import { MatIconModule } from '@angular/material/icon';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { IndexComponent } from './index/index.component';
@@ -24,6 +24,13 @@ import { AdminpointrelaisComponent } from './espaceadminplateforme/adminpointrel
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { AffecteradminpointrelaisComponent } from './espaceadminplateforme/affecteradminpointrelais/affecteradminpointrelais.component';
 import { OptionsComponent } from './espaceadminplateforme/Options/options.component';
+import { AprsidebarComponent } from './espaceadminpointrelais/aprsidebar/aprsidebar.component';
+import { ConsulterdashboardComponent } from './espaceadminplateforme/consulterdashboard/consulterdashboard/consulterdashboard.component';
+import { AgentsidebarComponent } from './espaceagentpointrelais/agentsidebar/agentsidebar/agentsidebar.component';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatButtonModule } from '@angular/material/button';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import{MatListModule} from '@angular/material/list';
 
 
 
@@ -45,7 +52,11 @@ import { OptionsComponent } from './espaceadminplateforme/Options/options.compon
     AdminpointrelaisComponent,
     PointrelaisComponent,
     AffecteradminpointrelaisComponent,
-    OptionsComponent, 
+    OptionsComponent,
+    AprsidebarComponent,
+    ConsulterdashboardComponent,
+    AgentsidebarComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -57,8 +68,11 @@ import { OptionsComponent } from './espaceadminplateforme/Options/options.compon
     MatSnackBarModule,
     BrowserAnimationsModule,
     MatDialogModule,
-
-    
+    MatIconModule,
+    MatSidenavModule,
+    MatButtonModule,
+    MatToolbarModule,
+    MatListModule,
   ],
   providers: [
   

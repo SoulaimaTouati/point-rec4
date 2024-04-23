@@ -2,6 +2,7 @@ import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
 import { AdminPointRelais } from '../../interface/adminpointrelais';
 import { AdminPointRelaisService } from '../../services/adminpointrelais.service';
 import { PointRelais } from '../../interface/pointrelais';
+import { AprsidebarService } from '../../services/aprsidebar.service';
 
 @Component({
   selector: 'app-adminpointrelais',
@@ -18,7 +19,7 @@ export class AdminpointrelaisComponent implements OnInit {
   searchQuery: string = '';
 
 
-  constructor(private adminPointRelaisService: AdminPointRelaisService) {}
+  constructor(private adminPointRelaisService: AdminPointRelaisService , private aprsidebarservice:AprsidebarService) {}
   
   ngOnInit(): void {
     this.loadAdminPointRelais();
@@ -37,33 +38,6 @@ export class AdminpointrelaisComponent implements OnInit {
       }
     );
   }
-
-
-
-  /*countRows(name: string): number {
-    return this.adminPointRelaisList.filter(admin => admin.nom === name).length;
-  
-
-  countPrenomRows(nom: string, prenom: string): number {
-    let count = 1;
-    for (let i = 1; i < this.adminPointRelaisList.length; i++) {
-      if (this.adminPointRelaisList[i].nom === nom && this.adminPointRelaisList[i].prenom === prenom) {
-        count++;
-      }
-    }
-    return count;
-  }
-  
-  countTelephoneRows(nom: string, prenom: string, telephone: string): number {
-    let count = 0;
-    for (let i = 0; i < this.adminPointRelaisList.length; i++) {
-      if (this.adminPointRelaisList[i].nom === nom && this.adminPointRelaisList[i].prenom === prenom &&
-          this.adminPointRelaisList[i].numerotelephone === telephone) {
-        count++;
-      }
-    }
-    return count;
-  }*/
   
 
   @ViewChild('btnToggleForm') btnToggleForm!: ElementRef;
@@ -126,5 +100,9 @@ export class AdminpointrelaisComponent implements OnInit {
       this.adminPointRelaisList = [];
     }
   }
-  
+
+  openSidebar() {
+    this.aprsidebarservice.openSidebar();
+  }
 }
+  

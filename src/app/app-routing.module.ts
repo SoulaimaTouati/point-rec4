@@ -10,6 +10,8 @@ import { AddadminplateformeComponent } from './espaceadminplateforme/addadminpla
 import { AdminpointrelaisComponent } from './espaceadminplateforme/adminpointrelais/adminpointrelais.component';
 import { AffecteradminpointrelaisComponent } from './espaceadminplateforme/affecteradminpointrelais/affecteradminpointrelais.component';
 import { OptionsComponent } from './espaceadminplateforme/Options/options.component';
+import { ConsulterdashboardComponent } from './espaceadminplateforme/consulterdashboard/consulterdashboard/consulterdashboard.component';
+import { AgentsidebarComponent } from './espaceagentpointrelais/agentsidebar/agentsidebar/agentsidebar.component';
 
 const routes: Routes = [
   {path:'suivis-colis',component:SuiviColisComponent},
@@ -22,6 +24,8 @@ const routes: Routes = [
   {path:'adminPr',component:AdminpointrelaisComponent},
   {path:'affecteradminpointreais',component:AffecteradminpointrelaisComponent},
   {path:'option',component:OptionsComponent},
+  {path:'dashboard',component:ConsulterdashboardComponent},
+  {path:'side',component:AgentsidebarComponent},
 
 ];
 

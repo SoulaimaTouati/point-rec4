@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { AprsidebarService } from '../../services/aprsidebar.service';
+
 
 @Component({
   selector: 'app-adminpointrlais',
@@ -6,5 +8,9 @@ import { Component } from '@angular/core';
   styleUrl: './adminpointrlais.component.css'
 })
 export class AdminpointrlaisComponent {
+  constructor(private aprsidebrservice : AprsidebarService){ }
+  openSidebar() {
+    this.aprsidebrservice.openSidebar();
+  }
 
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AdminPlateforme } from '../../interface/admin-plateforme';
 import { AuthentificationService } from '../../services/authentification.service';
+import { AprsidebarService } from '../../services/aprsidebar.service';
 
 @Component({
   selector: 'app-adminplateforme',
@@ -10,10 +11,14 @@ import { AuthentificationService } from '../../services/authentification.service
 export class AdminplateformeComponent implements OnInit {
 
   admins: AdminPlateforme[] = [];
-  constructor(private authentificationService: AuthentificationService) {}
+  constructor(private authentificationService: AuthentificationService ,private aprsidebarservice: AprsidebarService) {}
 
   ngOnInit(): void {
     this.getAllAdminPlateforme();
+  }
+
+  openSidebar() {
+    this.aprsidebarservice.openSidebar();
   }
 
   getAllAdminPlateforme(): void {

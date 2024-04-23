@@ -3,6 +3,7 @@ import { PointRelais } from '../../interface/pointrelais';
 import { PointrelaisService } from '../../services/pointrelais.service';
 import { AdminPointRelaisService } from '../../services/adminpointrelais.service';
 import { AdminPointRelais } from '../../interface/adminpointrelais';
+import { AprsidebarService } from '../../services/aprsidebar.service';
 
 @Component({
   selector: 'app-affecteradminpointrelais',
@@ -15,7 +16,7 @@ export class AffecteradminpointrelaisComponent implements OnInit {
   selectedPointRelaisId: number = 0;
   idpointrelais:number=0; // Initialisez selectedPointRelaisId dans le constructeur
 
-  constructor(private pointrelaisService: PointrelaisService,private adminpointrelaisService: AdminPointRelaisService){}
+  constructor(private pointrelaisService: PointrelaisService,private adminpointrelaisService: AdminPointRelaisService , private aprsidebarservice:AprsidebarService){}
 
   @ViewChild('btnToggleForm') btnToggleForm!: ElementRef;
   afficherFormulaire: boolean = false;
@@ -86,6 +87,9 @@ export class AffecteradminpointrelaisComponent implements OnInit {
      this.ajouteradminpointrelais();
      this.onUpdatePointRelais(this.selectedPointRelaisId, this.idadminpointrelais);
 
+}
+openSidebar() {
+  this.aprsidebarservice.openSidebar();
 }
 
 }
