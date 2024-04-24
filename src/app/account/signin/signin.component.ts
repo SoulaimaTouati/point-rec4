@@ -13,7 +13,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class SigninComponent {
   constructor(private authentificationService: AuthentificationService, private router: Router,private snackBar:MatSnackBar) {}
 
-  onSubmit(form: NgForm) {
+  /*onSubmit(form: NgForm) {
     const { username, password, selectedRole } = form.value;
     this.authentificationService.login(username, password, selectedRole).subscribe(response => {
       if (response.success) { 
@@ -36,4 +36,37 @@ export class SigninComponent {
       
     });
   }
+}*/
+
+onSubmit(form: NgForm) {
+  const { username, password } = form.value;
+  this.authentificationService.loginn(username, password).subscribe(
+      response => {
+          if (response.success) { 
+              switch (response.role) {
+                  case 'admin_platform':
+                      this.router.navigate(['/adminplateforme']);
+                      break;
+                  case 'admin_agent':
+                      this.router.navigate(['/adminpointrlais']);
+                      break;
+                  case 'agent_point_relais':
+                      this.router.navigate(['/agentpointrelais']);
+                      break;
+                  default:
+                      console.error('Rôle inattendu :', response.role);
+                      break;
+              }
+          } else {
+              console.error('Erreur lors de la connexion :', response.message);
+              this.snackBar.open('Nom d\'utilisateur ou mot de passe incorrect.', 'Fermer', {
+                  duration: 3000 
+              });
+          }
+      },
+      error => {
+          console.error('Erreur lors de la connexion :', error);
+      }
+  );
+}
 }

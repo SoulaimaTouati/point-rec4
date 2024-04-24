@@ -3,6 +3,7 @@ export interface AdminPlateforme {
     nom: string;
     prenom: string;
     numerotelephone: number;
-    password: string;
+    motdepasse: string;
+    email:string;
   }
   

@@ -12,7 +12,8 @@ export class AuthentificationService {
 
 // URL de monAPI
   private adminplateforme = 'http://localhost:3000/authentification/adminplateforme';  
-  private loginy = 'http://localhost:3000/authentification/login';  
+  private loginy = 'http://localhost:3000/authentification/login';
+  private loginnn=  'http://localhost:3000/authentification';
 
 
 
@@ -20,6 +21,11 @@ export class AuthentificationService {
   login(username: string, password: string, role: string): Observable<any> {
     return this.http.post<any>(`${this.loginy}`, { username, password, role });
   }
+
+  loginn(username: string, password: string): Observable<any> {
+    return this.http.post<any>(`${this.loginnn}/loginn/${username}/${password}`, {});
+  }
+  
 
 
   getAllAdminPlateforme(): Observable<AdminPlateforme[]> {

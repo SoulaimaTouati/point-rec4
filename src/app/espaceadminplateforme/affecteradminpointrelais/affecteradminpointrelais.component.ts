@@ -14,7 +14,7 @@ export class AffecteradminpointrelaisComponent implements OnInit {
 
   pointsRelaislist: PointRelais[] = [];
   selectedPointRelaisId: number = 0;
-  idpointrelais:number=0; // Initialisez selectedPointRelaisId dans le constructeur
+  idpointrelais:number=0; 
 
   constructor(private pointrelaisService: PointrelaisService,private adminpointrelaisService: AdminPointRelaisService , private aprsidebarservice:AprsidebarService){}
 
@@ -23,8 +23,9 @@ export class AffecteradminpointrelaisComponent implements OnInit {
   nom: string = ''; 
   prenom: string = '';
   numerotelephone:number= 0;
-  idadminpointrelais:number= 0;
+  idadminpointrelais:number=0;
   motdepasse:string='';
+  email='';
 
   ngOnInit(): void {
     this.loadPointRelais();
@@ -45,13 +46,13 @@ export class AffecteradminpointrelaisComponent implements OnInit {
         prenom: this.prenom,
         numerotelephone: this.numerotelephone,
         motdepasse: this.motdepasse,
-        idadminpointrelais:this.idadminpointrelais
+        idadminpointrelais:this.idadminpointrelais,
+        email:this.email,
     };
 
     this.adminpointrelaisService.ajouterAdminPointRelais(nouvelAdmin).subscribe(
         (response) => {
             console.log('Admin point relais ajouté avec succès:', response);
-            // Mettre à jour l'interface utilisateur ou effectuer d'autres actions nécessaires après l'ajout
             this.idadminpointrelais = response.idadminpointrelais; // Mettre à jour idadminpointrelais avec l'ID généré automatiquement
             this.onUpdatePointRelais(this.selectedPointRelaisId, this.idadminpointrelais); // Appeler onUpdatePointRelais après l'ajout avec les bonnes valeurs
         },
@@ -81,8 +82,8 @@ export class AffecteradminpointrelaisComponent implements OnInit {
       prenom: this.prenom,
       numerotelephone: this.numerotelephone,
       idadminpointrelais: this.idadminpointrelais,
-      motdepasse: this.motdepasse
-    
+      motdepasse: this.motdepasse,
+      email: this.email,
     }; 
      this.ajouteradminpointrelais();
      this.onUpdatePointRelais(this.selectedPointRelaisId, this.idadminpointrelais);

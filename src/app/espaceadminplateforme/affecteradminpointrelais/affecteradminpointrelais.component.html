@@ -8,12 +8,9 @@
    <section class="s1">
     <div class="container">
         <div>   
-            <h2>Choisir un Point Relais à consulter</h2>
+            <h2>saisir les données relatives au administrateur que vous voulez ajouter</h2>
             <div>
-                <br>
-                <!-- Bouton pour afficher/masquer le formulaire -->
             </div>
-            <br><br>
             <div>
                 <form (submit)="ajouteradminpointrelais()" class="form6">
                     <br>
@@ -30,6 +27,10 @@
                         <input type="number" id="numerotelephone" name="numerotelephone" [(ngModel)]="numerotelephone" placeholder="Numéro de téléphone">
                     </div><br>
                     <div>
+                        <label for="email">E-mail</label>
+                        <input type="text" id="email" name="email" [(ngModel)]="email" placeholder="E-mail">
+                    </div><br>
+                    <div>
                         <label for="motdepasse">Mot de passe</label>
                         <input type="password" id="motdepasse" name="motdepasse" [(ngModel)]="motdepasse" placeholder="Mot de passe">
                     </div><br>
@@ -41,7 +42,7 @@
                         </select>
                     </div>
                     <br>
-                    <button type="submit">Ajouter</button>
+                    <button type="submit" class="btnajouter">Ajouter</button>
                 </form>
             </div>
         </div>

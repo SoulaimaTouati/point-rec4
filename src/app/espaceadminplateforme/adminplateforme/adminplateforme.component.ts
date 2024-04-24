@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AdminPlateforme } from '../../interface/admin-plateforme';
 import { AuthentificationService } from '../../services/authentification.service';
 import { AprsidebarService } from '../../services/aprsidebar.service';
+import { AdminplateformeService } from '../../services/adminplateforme.service';
 
 @Component({
   selector: 'app-adminplateforme',
@@ -9,14 +10,21 @@ import { AprsidebarService } from '../../services/aprsidebar.service';
   styleUrl: './adminplateforme.component.css'
 })
 export class AdminplateformeComponent implements OnInit {
+  nom: string = ''; 
+  prenom: string = '';
+  numerotelephone:number= 0;
+  idadminpointrelais:number=0;
+  motdepasse:string='';
+  email='';
+
 
   admins: AdminPlateforme[] = [];
-  constructor(private authentificationService: AuthentificationService ,private aprsidebarservice: AprsidebarService) {}
+  constructor(private authentificationService: AuthentificationService ,private aprsidebarservice: AprsidebarService,private adminplateformeservice:AdminplateformeService) {}
 
   ngOnInit(): void {
     this.getAllAdminPlateforme();
   }
-
+  
   openSidebar() {
     this.aprsidebarservice.openSidebar();
   }
@@ -30,6 +38,6 @@ export class AdminplateformeComponent implements OnInit {
         console.error('Error fetching admins:', error);
       },
     });
-  }
+  }   
 
 }

@@ -1,69 +1,14 @@
-
-  <nav class="side" [class.open]="isOpen">
-    <!-- Contenu de la barre latérale -->
+<div class="sidebar"  *ngIf="isOpen">
     <a href="javascript:void(0)" class="closebtn" (click)="closeSidebar()" style="font-size: 40px; ">×</a>
     <a href="#">About</a>
     <a href="#">Services</a>
     <a href="#">Clients</a>
     <a href="#">Contact</a>
-  </nav>
-  <div id="main"style="font-size: 40pv;">
-x <br>
-x <br>
-x <br>
-x <br>
-x <br>
-x <br>
-x <br>
-x <br>
-x <br>
-x <br>
-x <br>
-x <br>
-x <br>
-x <br>
-x <br>
-x <br>
-x <br>
-x <br>
-x <br>
-x <br>
-x <br>
-x <br>
-x <br>
-x <br>
-x <br>
-x <br>
-x <br>
-x <br>
-x <br>
-x <br>
-x <br>
-x <br>
-x <br>
-x <br>
-x <br>
-x <br>
-x <br>
-x <br>
-x <br>
-x <br>
-x <br>
-x <br>
-x <br>
-x <br>
-x <br>
-x <br>
-x <br>
-x <br>
-x <br>
-x <br>
-x <br>
-x <br>
-
+  </div>
+<div id="main" *ngIf="isOpen">
+  <!-- Contenu principal de la page -->
 </div>
-  
-  <button class="openbtn" (click)="toggleSidebar()">_
-    <i class="fa fa-bars"></i>
-  </button>
-  
+
+<button class="openbtn" (click)="toggleSidebar()">
+  <i class="fa fa-bars"></i>
+</button>

@@ -27,7 +27,7 @@
        /* centre l'élément horizontalement en utilisant auto pour les marges gauche et droite */
        margin: 0 auto; 
        /* bordure de 2px en gras et noire */
-       border: 2px solid rgb(1, 1, 1) ; 
+       border: 3px solid rgb(16, 35, 120) ; 
        font-weight: bold; 
        /* espacement intérieur de votre choix */
        padding: 20px; 
@@ -36,7 +36,7 @@
        background-color: rgb(199, 195, 195);
        
      }
-     
+
      .openbtn{
       height: 6vh;
       top: auto;
@@ -47,4 +47,15 @@
   }
   .openbtn:hover{
       color: rgb(247, 111, 0);
+  }
+  .btnajouter{
+    color:rgb(247, 111, 0) ;
+    background-color: rgb(16, 35, 120);
+    border: 1px solid rgb(16, 35, 120) ;
+    height: 30px; 
+    width: 100px;
+    font-size: large;
+  }
+  .btnajouter:hover{
+    background-color:white ;
   }

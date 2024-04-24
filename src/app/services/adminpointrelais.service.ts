@@ -26,7 +26,6 @@ export class AdminPointRelaisService {
   ajouterAdminPointRelais(nouvelAdmin: AdminPointRelais): Observable<any> {
     return this.http.post<any>(this.addurl, nouvelAdmin).pipe(
       catchError((error) => {
-        // Gérer l'erreur ici, par exemple en renvoyant une erreur personnalisée ou en laissant le composant qui utilise ce service gérer l'erreur
         throw error;
       })
     );

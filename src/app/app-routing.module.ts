@@ -24,7 +24,7 @@ const routes: Routes = [
   {path:'adminPr',component:AdminpointrelaisComponent},
   {path:'affecteradminpointreais',component:AffecteradminpointrelaisComponent},
   {path:'option',component:OptionsComponent},
-  {path:'dashboard',component:ConsulterdashboardComponent},
+  {path:'consulter-dashboard/:id',component:ConsulterdashboardComponent},
   {path:'side',component:AgentsidebarComponent},
 
 ];

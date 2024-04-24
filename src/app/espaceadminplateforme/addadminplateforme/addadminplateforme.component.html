@@ -2,12 +2,42 @@
   <app-sidebar></app-sidebar>
   <router-outlet></router-outlet>
   <div id="main">
-    <button class="openbtn" (click)="openSidebar()" >☰</button>  
-    
-  </div>
+   <button class="openbtn" (click)="openSidebar()" >☰</button>   
+ </div>
  </nav>
-
-<section class="s1">
-  <h1>addadminplateforme works!</h1>
-
-</section>
+ <section class="s1">
+  <div class="container">
+      <div>   
+          <h2>saisir les données relatives au administrateur que vous voulez ajouter</h2>
+          <div>
+          </div>
+          <div>
+              <form (submit)="ajouteradminplateforme()" class="form6">
+                  <br>
+                  <div>
+                      <label for="nom">Nom</label>
+                      <input type="text" id="nom" name="nom" [(ngModel)]="nom" placeholder="Nom">
+                  </div><br>
+                  <div>
+                      <label for="prenom">Prénom</label>
+                      <input type="text" id="prenom" name="prenom" [(ngModel)]="prenom" placeholder="Prénom">
+                  </div><br>
+                  <div>
+                      <label for="numerotelephone">Numéro de téléphone</label>
+                      <input type="number" id="numerotelephone" name="numerotelephone" [(ngModel)]="numerotelephone" placeholder="Numéro de téléphone">
+                  </div><br>
+                  <div>
+                      <label for="email">E-mail</label>
+                      <input type="text" id="email" name="email" [(ngModel)]="email" placeholder="E-mail">
+                  </div><br>
+                  <div>
+                      <label for="motdepasse">Mot de passe</label>
+                      <input type="password" id="motdepasse" name="motdepasse" [(ngModel)]="motdepasse" placeholder="Mot de passe">
+                  </div><br>
+                  <button type="submit" class="btnajouter">Ajouter</button>
+                </form>
+          </div>
+      </div>
+  </div>
+      </section>     
+      

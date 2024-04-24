@@ -4,4 +4,5 @@ export interface AdminPointRelais {
   prenom: string;
   numerotelephone: number;
   motdepasse: string;
+  email: string;
   }

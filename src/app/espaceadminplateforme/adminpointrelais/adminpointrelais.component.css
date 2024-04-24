@@ -21,7 +21,7 @@
     /* centre l'élément horizontalement en utilisant auto pour les marges gauche et droite */
     margin: 0 auto; 
     /* bordure de 2px en gras et noire */
-    border: 2px solid rgb(1, 1, 1) ; 
+    border: 2px solid rgb(16, 35, 120) ; 
     font-weight: bold; 
     /* espacement intérieur de votre choix */
     padding: 20px; 
@@ -34,8 +34,26 @@
   .btnrecherche {
     display: flex;
     justify-content: flex-end;
-    padding: 20px;
+    padding: 5px;
 }
+.btnrecherche button {
+  padding: 5px 10px; 
+  font-size: 14px; 
+  border-radius: 5px;
+  border: 1px solid rgb(16, 35, 120); 
+  background-color: rgb(16, 35, 120); 
+  color: #333; 
+}
+.btnrecherche button:hover {
+  background-color:white ;
+  color: #f0f0f0;
+}
+.btnrecherche{
+  padding: 5px;
+
+}
+
+
 .liste{
 display: flex;
 justify-content: flex-start;
@@ -48,7 +66,7 @@ padding: 50px;
   
   .table-bordered th,
   .table-bordered td {
-    border: 1px solid #ccc;
+    border: 1px solid rgb(16, 35, 120);
     padding: 8px;
     text-align: left;
   }
@@ -62,7 +80,7 @@ padding: 50px;
 }
 
 th, td {
-  border: 1px solid #dddddd;
+  border: 1px solid rgb(16, 35, 120);
   text-align: left;
   padding: 8px;
 }
@@ -88,4 +106,52 @@ th {
 }
 .openbtn:hover{
     color: rgb(247, 111, 0);
+}
+
+/* Style for the sort dropdown */
+.sort-container {
+  position: relative;
+  display: inline-block;
+}
+
+
+/* Style pour le contenus du sort dropdown  */
+.sort-dropdown {
+  display: none;
+  position: absolute;
+  background-color: rgb(16, 35, 120);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Style pour le dropdown buttons */
+.sort-dropdown button {
+  background-color: inherit;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  padding: 10px;
+  border: 1px solid rgb(16, 35, 120);
+  outline: none;
+}
+
+/* Show the sort dropdown when hover over the sort button */
+.sort-container:hover .sort-dropdown {
+  display: block;
+}
+input::placeholder {
+  color: rgb(247, 111, 0);
+  font-size: medium;
+}
+
+.btnconsulter{
+  border: 1.5px solid rgb(16, 35, 120);
+  justify-content:space-around;
+
+}
+.btnconsulter:hover{
+background-color: rgb(16, 35, 120);
+color:rgb(247, 111, 0) ;
+
 }

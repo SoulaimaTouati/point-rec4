@@ -1,64 +1,51 @@
-   <nav class=" sidebar">
-   <app-sidebar></app-sidebar>
-   <router-outlet></router-outlet>
-   <div id="main">
-    <button class="openbtn" (click)="openSidebar()" >☰</button>   
+<nav class="sidebar">
+  <app-sidebar></app-sidebar>
+  <router-outlet></router-outlet>
+  <div id="main">
+    <button class="openbtn" (click)="openSidebar()">☰</button>   
   </div>
-  </nav>
-    <section class="s1">
-        <div class="container">
-          <div class="btnrecherche">
-            <input type="text" name="searchQuery" [(ngModel)]="searchQuery" placeholder="Rechercher">
-            <button (click)="search()">Rechercher</button>
-          </div>
-            <div>
-<h2>Liste des responsables des points relais</h2>
-<table class="table">
-  <thead>
-    <tr>
-      <th>Nom</th>
-      <th>Prénom</th>
-      <th>Numéro de téléphone</th>
-      <th>Action</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let admin of adminPointRelaisList">
-      <td>{{ admin.nom }}</td>
-      <td>{{ admin.prenom }}</td>
-      <td>{{ admin.numerotelephone }}</td>
-      <td><button (click)="consulterPointsRelais(admin.idadminpointrelais)">Consulter Points Relais</button></td>
-    </tr>
-  </tbody>
-</table>
-
-<div *ngIf="afficherPointsRelais">
-    <h2>Liste des points relais associés à l'administrateur: {{name}} {{lastname}}</h2>
-<table class="table">
-  <thead>
-    <tr>
-      <th>Numéro du point relais</th>
-      <th>Adresse</th>
-      <th>Numéro de téléphone</th>
-      <th>Capacité maximale</th>
-      <th>Taux de saturation</th>
-      <th>Nom de l'agent</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let pointRelais of pointsRelais">
-      <td>{{ pointRelais.num_pointrelais }}</td>
-      <td>{{ pointRelais.adresse }}</td>
-      <td>{{ pointRelais.num_telephone }}</td>
-      <td>{{ pointRelais.capacite_max }}</td>
-      <td>{{ pointRelais.taux_saturation }}</td>
-      <td>{{ pointRelais.nom_agent }}</td>
-    </tr>
-  </tbody>
-</table>
-
-    
-  </div>       
-            </div>
-        </div>
-    </section>
+</nav>
+<section class="s1">
+  <div class="container">
+    <div class="btnrecherche">
+      <input type="text" name="searchQuery" [(ngModel)]="searchQuery" placeholder="Rechercher" style="font-size: 10px; height: 35px;width: 200px;  border: 1px solid rgb(16, 35, 120);
+      ">
+      <button mat-button (click)="search()" class="recherche" style="color: rgb(247, 111, 0) ;">Rechercher</button>
+    </div>
+    <div style=" display: flex;
+    justify-content: flex-end;
+    padding: 5px;">
+      <mat-form-field >
+        <mat-label >Trier par</mat-label>
+        <mat-select (selectionChange)="onSortChange($event)">
+          <mat-option value="nom" class="nom" style="  border: 1px solid rgb(16, 35, 120);">Nom</mat-option>
+          <mat-option value="prenom" class="nom" style="  border: 1px solid rgb(16, 35, 120);">Prénom</mat-option>
+        </mat-select>
+      </mat-form-field></div>
+    <div>
+      <h2>La Liste des responsables des points relais</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Numéro de téléphone</th>
+            <th>E-mail</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        
+        <tbody>
+          <tr *ngFor="let admin of adminPointRelaisList">
+            <td>{{ admin.nom }}</td>
+            <td>{{ admin.prenom }}</td>
+            <td>{{ admin.numerotelephone }}</td>
+            <td>{{ admin.email }}</td>
+            <td><button class="btnconsulter" (click)="consulterPointsRelais(admin.idadminpointrelais)">Consulter Points Relais</button></td>
+          </tr>
+        </tbody>
+      </table>
+      
+    </div>
+  </div>
+</section>

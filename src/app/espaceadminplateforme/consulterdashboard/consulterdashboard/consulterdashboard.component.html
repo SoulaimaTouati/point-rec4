@@ -1,7 +1,36 @@
-<nav class=" sidebar">
+<nav class="sidebar">
     <app-sidebar></app-sidebar>
     <router-outlet></router-outlet>
     <div id="main">
-     <button class="openbtn" (click)="openSidebar()" >☰</button>   
-   </div>
-   </nav>
+      <button class="openbtn" (click)="openSidebar()">☰</button>
+    </div>
+  </nav>
+  
+  <section class="s1">
+    <div class="container">
+      <h2>Liste des points relais associés à l'administrateur: {{ name }} {{ lastname }}</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Numéro du point relais</th>
+            <th>Adresse</th>
+            <th>Numéro de téléphone</th>
+            <th>Capacité maximale</th>
+            <th>Taux de saturation</th>
+            <th>Nom de l'agent</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let pointRelais of pointsRelais">
+            <td>{{ pointRelais.num_pointrelais }}</td>
+            <td>{{ pointRelais.adresse }}</td>
+            <td>{{ pointRelais.num_telephone }}</td>
+            <td>{{ pointRelais.capacite_max }}</td>
+            <td>{{ pointRelais.taux_saturation }}</td>
+            <td>{{ pointRelais.nom_agent }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+  

@@ -31,6 +31,10 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import{MatListModule} from '@angular/material/list';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+
+
 
 
 
@@ -73,6 +77,10 @@ import{MatListModule} from '@angular/material/list';
     MatButtonModule,
     MatToolbarModule,
     MatListModule,
+    MatFormFieldModule,
+    MatListModule,
+    MatSelectModule,
+
   ],
   providers: [
   
