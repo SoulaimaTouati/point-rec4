@@ -17,18 +17,23 @@ import { AprsidebarService } from '../../services/aprsidebar.service';
         this.isOpen = isOpen;
       });
     }
+    isCollapsed: boolean = false;
+   isDropdownOpen: boolean = false;
   
+    toggleDropdown(event: Event) {
+     // event.preventDefault(); // Empêche le lien de suivre son URL
+      this.isDropdownOpen = !this.isDropdownOpen;
+    }
+  
+    toggleCollapse() {
+      this.isCollapsed = !this.isCollapsed;
+    }
+  
+    openSidebar() {
+      this.aprSidebarService.openSidebar();
+    }
     closeSidebar() {
       this.aprSidebarService.closeSidebar();
     }
-    toggleSidebar() {
-      this.isOpen = !this.isOpen;
-      if (this.isOpen) {
-        this.aprSidebarService.openSidebar();
-      } else {
-        this.aprSidebarService.closeSidebar();
-      }
-    }
   }
-  
 

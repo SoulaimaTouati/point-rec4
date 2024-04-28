@@ -1,0 +1,25 @@
+<div class="side" >
+    <div id="main" *ngIf="!isOpen" >
+        <button class="openbtn" (click)="openSidebar()" style="top: 50px;; position: fixed;">☰</button>    
+      <i class="fa fa-bars"></i>
+      <ul>
+        <li><a href="adminplateforme"><i class="fa fa-hoome" aria-current="page"></i>Accueil</a></li>
+        <li class="dropdown" (click)="toggleDropdown($event)">
+          <a class="dropdown-toggle"><i class="fa fa-suitcase"></i>Point Relais</a>
+          <ul class="dropdown-menu" [class.show]="isDropdownOpen">
+            <li><a href="adminPr">Consulter la Liste des administrateur Point Relais</a></li>
+            <li><a href="affecteradminpointreais">Ajouter Admin Point Relais</a></li>
+          </ul>
+        </li>
+        <li><a href="adminPr">Administrateur Point Relais</a></li>
+        <li><a href="addadminp">Ajouter administrateur Plate-forme</a></li>
+        <li><a href="option">Options</a></li>
+        <li><a href="dashboard">Consulter Dashboard</a></li>
+        <li style="order: 999;"><a class="nav-link" href="espace-administrative">Log Out</a></li>
+      </ul>
+    </div>
+    <div id="main" *ngIf="!isOpen" >
+      <button class="openbtn" (click)="openSidebar()" style="top: auto;">☰</button>
+    </div>
+  </div>
+  

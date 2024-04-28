@@ -1,65 +1,130 @@
-.sidebar {
-    height: 200vh;
+.side{
+  height: 10%;
+}
+body {
+   /* position: relative;
+    height: 100vh;
     width: 250;
-    position: fixed;
-    z-index: 999;
-    top: auto;
-    left: 0;
-    background-color: #111;
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 60px;
-    color: #818181;
+    background: rgb(226, 226, 233);
+    margin: 0; /* Supprime la marge par défaut du body */
+    font-family: Arial, sans-serif; /* Assure une police de caractères appropriée */
     position: absolute;
+display: none;
+top:0%;
+  }
+  nav {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    position: fixed;
+    width: 270px;
+    height: fit-content;
+    min-height: 350px;
+    color: white;
+    background-color: rgb(16, 35, 120);
+    top:7% ;
   }
   
- 
+  nav span {
+    text-align: center;
+    padding: 20px 0;
+    font-size: 28px;
+    font-weight: 800;
+  }
   
-  .sidebar a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
+  nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  nav li {
+    width: 100%;
+  }
+  
+  nav a {
     display: block;
-    transition: 0.3s;
+    padding: 22px;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    transition: ease-in 0.2s;
   }
   
-  .sidebar a:hover {
-    color: #f1f1f1;
+  nav a:hover {
+    color: rgb(247, 111, 0);
   }
   
-  .sidebar .closebtn {
+  nav i {
+    margin-right: 10px;
+  }
+  
+  section {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
     position: absolute;
     top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
+    left: 270px;
+    height: 100vh;
+    width: calc(100% - 270px);
+    padding: 30px;
+    transition: ease-in 0.3s;
+  }
+  
+  section h1 {
+    color: rgb(0, 0, 0);
+    font-size: 32px;
+    text-align: center;
+  }
+  
+.s1{
+    padding: 100px;
+}
+nav li {
+    width: auto;
+    border-bottom: 1px solid white; 
+    padding-bottom: 17px; 
+  }
+  
+
+
+  .dropdown-menu {
+    display: none;
+    background-color: rgb(16, 35, 120);
+    position: absolute;
+    top: 0%;
+    left: 99%;
+   /* padding: 200;*/
+    z-index: 999;
+    width: 155%;
+  }
+  
+  .dropdown-menu.show {
+    display: block;
+  }
+  
+  nav button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    margin: 10px;
     cursor: pointer;
   }
-  .side {
-    position: fixed;
-    top: auto;
-    bottom: 0;
-    left: -300px; /* Assurez-vous qu'il est initialement caché */
-    width: 300px;
-    height: 100%;
-    background-color: #111;
-    transition: left 0.5s ease;
-  }
-  
-  .side.open {
-    left: 0;/* Déplacer la barre latérale à gauche lorsqu'elle est ouverte */
-    position: fixed; 
-  }
-  
-  #main {
-    margin-left: 320px; /* Assurez-vous que le contenu principal est décalé vers la droite pour laisser de l'espace à la barre latérale ouverte */
-  }
-  
-  .openbtn {
-    position: fixed;
-    top: 10px;
-    left: 10px;
-    z-index: 999; /* Assurez-vous que le bouton est au-dessus de tout le contenu */
-  }
-  
-  
+.closebtn:hover{
+  color: rgb(247, 111, 0);
+}
+.openbtn{
+  height: 6vh;
+  top: auto;
+  font-size: xx-large;
+  background-color: rgb(16, 35, 120);
+  color: white;
+position: absolute;
+display: none;
+top:0%;
+}
+.openbtn:hover{
+  color: rgb(247, 111, 0);
+}

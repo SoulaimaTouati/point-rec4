@@ -1,8 +1,15 @@
-<div class="sidebar">
 <app-aprsidebar></app-aprsidebar>
 <router-outlet></router-outlet>
-<div id="main" >
-  <button class="openbtn" (click)="openSidebar()">☰ Open Sidebar</button>  
-  
+<div id="main" *ngIf="!isOpen" >
+    <button class="openbtn" (click)="openSidebar()" style="top: 50px;; position: fixed;">☰</button>   
+     
+ </div>
+
+  <section class="s1">
+    <div class="container" style="font-size: xx-large;">
+welcome 
+
 </div>
-</div>
+</section>
+
+
