@@ -26,9 +26,13 @@ export class AffecteradminpointrelaisComponent implements OnInit {
   idadminpointrelais:number=0;
   motdepasse:string='';
   email='';
+  isOpen: boolean = true;
 
   ngOnInit(): void {
     this.loadPointRelais();
+    this.aprsidebarservice.isOpen$.subscribe(isOpen => {
+      this.isOpen = isOpen;
+    });
   }
 
   loadPointRelais() {

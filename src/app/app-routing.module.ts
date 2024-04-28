@@ -12,6 +12,10 @@ import { AffecteradminpointrelaisComponent } from './espaceadminplateforme/affec
 import { OptionsComponent } from './espaceadminplateforme/Options/options.component';
 import { ConsulterdashboardComponent } from './espaceadminplateforme/consulterdashboard/consulterdashboard/consulterdashboard.component';
 import { AgentsidebarComponent } from './espaceagentpointrelais/agentsidebar/agentsidebar/agentsidebar.component';
+import { AjoutercolisadelivreComponent } from './espaceagentpointrelais/ajoutercolisadelivre/ajoutercolisadelivre.component';
+import { RetourcolisComponent } from './espaceagentpointrelais/retourcolis/retourcolis.component';
+import { DashboardComponent } from './espaceadminpointrelais/dashboard/dashboard.component';
+import { CreeragentpointrelaisComponent } from './espaceadminpointrelais/creeragentpointrelais/creeragentpointrelais.component';
 
 const routes: Routes = [
   {path:'suivis-colis',component:SuiviColisComponent},
@@ -26,6 +30,10 @@ const routes: Routes = [
   {path:'option',component:OptionsComponent},
   {path:'consulter-dashboard/:id',component:ConsulterdashboardComponent},
   {path:'side',component:AgentsidebarComponent},
+  {path:'ajoutercolisadélivré',component:AjoutercolisadelivreComponent},
+  {path:'retourcolis',component:RetourcolisComponent},
+  {path:'dashboardpointrelais',component:DashboardComponent},
+  {path:'creeragentpointrelais',component:CreeragentpointrelaisComponent,}
 
 ];
 

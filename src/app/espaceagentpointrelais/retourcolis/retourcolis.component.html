@@ -6,15 +6,11 @@
  <section class="s1">
     <div class="container">
         <div> 
-        <br>   
+        <br> <br>
             <div>
-            <img [src]="photodelivre" alt="image" style="width: 50px; height: auto;">
+            <img [src]="photoretour" alt="image" style="width: 75px; height: auto;">
         </div><br><br>
-
-        <div>bonjour {{ nom }} </div>
-        <div>bonjour {{userId}}</div>
-
-        <h2>Saisir Le numéro de colis délivré </h2>
+            <h2>Saisir Le numéro du colis en retouur </h2>
             <div>
             </div>
             <div>
@@ -24,8 +20,9 @@
                     <div>
                         <input type="text" id="nom" name="nom" [(ngModel)]="numcolis" placeholder="numéros du colis composé de 13 caractère" style="border-color: rgb(16, 35, 120);">
                     </div><br>
-                   
+                   <div>
                     <button type="submit" class="btnajouter">Délivré</button>
+                </div><br><br><br>
                 </form>
             </div>
         </div>

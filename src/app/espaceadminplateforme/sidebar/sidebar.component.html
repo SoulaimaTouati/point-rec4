@@ -1,10 +1,16 @@
-<div class="side">
+<div class="side" >
   <nav *ngIf="isOpen">
     <button class="closeSidebar" (click)="closeSidebar()" style="font-size: 40px ; position: absolute; right: 0;">x</button>
     <br> 
     <i class="fa fa-bars"></i>
-    <ul>
-      <li><a href="adminplateforme"><i class="fa fa-hoome" aria-current="page"></i>Accueil</a></li>
+    <ul style="text-align: center;">
+      <li>
+        <div>
+        <i class="fas fa-user-circle" style="font-size: 30px;"></i><br>
+      </div><br>
+      <div>
+        <i style="font-size: 20px;">{{nom}}</i></div><br>
+        <li><a href="adminplateforme"><i class="fa fa-hoome" aria-current="page"></i>Accueil</a></li>
       <li class="dropdown" (click)="toggleDropdown($event)">
         <a class="dropdown-toggle"><i class="fa fa-suitcase"></i>Point Relais</a>
         <ul class="dropdown-menu" [class.show]="isDropdownOpen">
@@ -19,7 +25,7 @@
       <li style="order: 999;"><a class="nav-link" href="espace-administrative">Log Out</a></li>
     </ul>
   </nav>
-  <div id="main" *ngIf="!isOpen">
-    <button class="openbtn" (click)="openSidebar()">☰ Open Sidebar</button>
+  <div id="main" *ngIf="!isOpen" >
+    <button class="openbtn" (click)="openSidebar()" style="top: auto;">☰</button>
   </div>
 </div>

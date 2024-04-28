@@ -1,43 +1,45 @@
 import { BreakpointObserver } from '@angular/cdk/layout';
-import {
-  Component,
-  ViewChild,
-} from '@angular/core';
+import {Component,OnInit,ViewChild,} from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
+import { AprsidebarService } from '../../../services/aprsidebar.service';
+import { CookieService } from 'ngx-cookie-service';
+import { AuthentificationService } from '../../../services/authentification.service';
 
 @Component({
   selector: 'app-agentsidebar',
   templateUrl: './agentsidebar.component.html',
   styleUrls: ['./agentsidebar.component.css']
 })
-export class AgentsidebarComponent {
-  title = 'material-responsive-sidenav';
-  @ViewChild(MatSidenav)
-  sidenav!: MatSidenav;
-  isMobile= true;
-  isCollapsed = true;
+export class AgentsidebarComponent implements OnInit {
+  constructor(private aprsidebarservice: AprsidebarService,private cookieService: CookieService , private authService:AuthentificationService){}
 
+  isOpen: boolean = true;
+  nom: string = '';
+  userId:number=0;
+  ngOnInit() {
+    this.aprsidebarservice.isOpen$.subscribe(isOpen => {
+      this.isOpen = isOpen;
+      this.cookieService.set('username', 'valeur-du-username');
+      this.nom = this.authService.getUsername();
 
+    });
+  }
+  isCollapsed: boolean = false;
+ isDropdownOpen: boolean = false;
 
-  constructor(private observer: BreakpointObserver) {} 
-  
-  toggleMenu() {
-    if(this.isMobile){
-      this.sidenav.toggle();
-      this.isCollapsed = false; // On mobile, the menu can never be collapsed
-    } else {
-      this.sidenav.open(); // On desktop/tablet, the menu can never be fully closed
-      this.isCollapsed = !this.isCollapsed;
-    }
+  toggleDropdown(event: Event) {
+   // event.preventDefault(); // Empêche le lien de suivre son URL
+    this.isDropdownOpen = !this.isDropdownOpen;
   }
 
-  ngOnInit() {
-    this.observer.observe(['(max-width: 800px)']).subscribe((screenSize) => {
-      if(screenSize.matches){
-        this.isMobile = true;
-      } else {
-        this.isMobile = false;
-      }
-    });
+  toggleCollapse() {
+    this.isCollapsed = !this.isCollapsed;
+  }
+
+  openSidebar() {
+    this.aprsidebarservice.openSidebar();
+  }
+  closeSidebar() {
+    this.aprsidebarservice.closeSidebar();
   }
 }

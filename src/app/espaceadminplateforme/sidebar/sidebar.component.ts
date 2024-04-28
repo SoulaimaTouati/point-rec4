@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AprsidebarService } from '../../services/aprsidebar.service';
+import { CookieService } from 'ngx-cookie-service';
+
+import { AuthentificationService } from '../../services/authentification.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -8,15 +11,19 @@ import { AprsidebarService } from '../../services/aprsidebar.service';
   styleUrl: './sidebar.component.css'
 })
 export class SidebarComponent implements OnInit {
-  isOpen: boolean = true;
+  constructor(private aprsidebarservice: AprsidebarService,private cookieService: CookieService, private authService:AuthentificationService ){}
 
+  isOpen: boolean = true;
+  nom: string = '';
+  userId:number=0;
   ngOnInit() {
     // Souscrivez à l'observable isOpen$ pour écouter les changements de la valeur isOpen
     this.aprsidebarservice.isOpen$.subscribe(isOpen => {
       this.isOpen = isOpen;
+      this.cookieService.set('username', 'valeur-du-username');
+      this.nom = this.authService.getUsername();
     });
   }
-  constructor(private aprsidebarservice: AprsidebarService){}
   isCollapsed: boolean = false;
  isDropdownOpen: boolean = false;
 

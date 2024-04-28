@@ -17,6 +17,13 @@ export class AddadminplateformeComponent {
   idadminplateforme:number=0;
   motdepasse:string='';
   email:string='';
+  isOpen: boolean = true;
+
+  ngOnInit(): void {
+    this.aprsidebarservice.isOpen$.subscribe(isOpen => {
+      this.isOpen = isOpen;
+    });
+  }
 
   openSidebar() {
     this.aprsidebarservice.openSidebar();

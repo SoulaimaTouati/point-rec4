@@ -1,0 +1,56 @@
+<app-agentsidebar></app-agentsidebar>
+<router-outlet></router-outlet>
+<div id="main" *ngIf="!isOpen" >
+    <button class="openbtn" (click)="openSidebar()" style="top: 50px;background-color: rgb(16, 35, 120); position: fixed;">☰</button>    
+ </div>
+ <section class="s1">
+    <div class="container">
+        <div>   
+            <h2>saisir les données relatives au colis a délivré</h2>
+            <div>
+            </div>
+            <div>
+                <form class="form6">
+                    <br>
+                    <div>
+                        <label for="nom">Numéro du colis</label>
+                        <input type="text" id="nom" name="nom"  placeholder="Numéro du colis">
+                    </div><br>
+                    <div>
+                        <label for="prenom">Description</label>
+                        <input type="text" id="prenom" name="prenom"  placeholder="Description">
+                    </div><br>
+                    <div>
+                        <label for="numerotelephone">Poids</label>
+                        <input type="number" id="numerotelephone" name="numerotelephone"  placeholder="Numéro de téléphone">
+                    </div><br>
+                    <div>
+                        <label for="email">Nom de l'Expéditeur</label>
+                        <input type="text" id="email" name="email"  placeholder="Nom de l'Expéditeur">
+                    </div><br>
+                    <div>
+                        <label for="motdepasse">Nom du Destinataire</label>
+                        <input type="password" id="motdepasse" name="motdepasse" placeholder="Nom du Destinataire">
+                    </div><br>
+                    <div>
+                        <label for="motdepasse">Numéro du point relais</label>
+                        <input type="password" id="motdepasse" name="motdepasse"  placeholder="Numéro du point relais">
+                    </div><br>
+                    <div>
+                        <label for="num-pointrelais">Sélectionnez l'état de colis</label>
+                        <select id="num-pointrelais" name="num-pointrelais" >
+                            <option  [value]="">délivré</option>
+                            <option  [value]="">en retour</option>
+                            <option  [value]="">en attend</option>
+
+
+                        </select>
+                    </div>
+                    <br>
+                    <button type="submit" class="btnajouter">Ajouter</button>
+                </form>
+            </div>
+        </div>
+    </div>
+        </section>     
+        

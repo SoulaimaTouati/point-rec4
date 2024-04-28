@@ -3,7 +3,7 @@ import { AuthentificationService } from '../../services/authentification.service
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar'; 
-
+import { CookieService } from 'ngx-cookie-service'; 
 
 @Component({
   selector: 'app-signin',
@@ -11,7 +11,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrl: './signin.component.css'
 })
 export class SigninComponent {
-  constructor(private authentificationService: AuthentificationService, private router: Router,private snackBar:MatSnackBar) {}
+  constructor(private authentificationService: AuthentificationService, private router: Router,private snackBar:MatSnackBar,private cookieService: CookieService) {}
 
   /*onSubmit(form: NgForm) {
     const { username, password, selectedRole } = form.value;
@@ -43,6 +43,10 @@ onSubmit(form: NgForm) {
   this.authentificationService.loginn(username, password).subscribe(
       response => {
           if (response.success) { 
+            this.cookieService.set('userId', response.id);
+            console.log("hello", response.id)
+            this.authentificationService.setUsername(response.nom);
+            console.log("hello",response.nom)
               switch (response.role) {
                   case 'admin_platform':
                       this.router.navigate(['/adminplateforme']);

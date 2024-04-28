@@ -1,4 +1,4 @@
-export interface PointRelais {
+export interface Colis {
     id_pointrelais: number; 
     num_pointrelais: number; 
     adresse: string; 

@@ -12,6 +12,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./adminpointrelais.component.css']
 })
 export class AdminpointrelaisComponent implements OnInit {
+
+  isOpen: boolean = true;
+
   adminPointRelaisList: AdminPointRelais[] = [];
   pointsRelais: PointRelais[] = [];
   afficherPointsRelais: boolean = false;
@@ -25,6 +28,9 @@ export class AdminpointrelaisComponent implements OnInit {
   
   ngOnInit(): void {
     this.loadAdminPointRelais();
+    this.aprsidebarservice.isOpen$.subscribe(isOpen => {
+      this.isOpen = isOpen;
+    });
   }
 
   sortByName(): void {

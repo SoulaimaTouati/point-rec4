@@ -1,4 +1,7 @@
 <nav class=" sidebar">
   <app-sidebar></app-sidebar>
+  <div id="main" *ngIf="!isOpen" >
+    <button class="openbtn" (click)="openSidebar()" style="top: 50px;; position: fixed;">☰</button>    
+ </div>
  </nav>
  <section>options works</section>

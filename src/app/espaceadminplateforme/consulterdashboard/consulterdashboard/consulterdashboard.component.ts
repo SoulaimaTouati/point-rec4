@@ -15,10 +15,17 @@
     pointsRelais: PointRelais[] = [];
     name: string = '';
     lastname: string = '';
+    isOpen: boolean = true;
 
     constructor(private aprsidebarservice: AprsidebarService, private router: Router, private route: ActivatedRoute, private adminPointRelaisService:AdminPointRelaisService) { }
 
     ngOnInit(): void {
+
+
+        this.aprsidebarservice.isOpen$.subscribe(isOpen => {
+          this.isOpen = isOpen;
+        });
+      
       this.route.params.subscribe(params => {
         const idadminpointrelais = +params['id'];
         if (idadminpointrelais) {

@@ -1,26 +1,34 @@
-<mat-sidenav [mode]="isMobile ? 'over' : 'side'" [opened]="isMobile ? 'false' : 'true'">
-<mat-toolbar color="primary">
-    <button mat-icon-button aria-label="Menu icon" (click)="toggleMenu()">
-        <mat-icon>menu</mat-icon>
-    </button>
-    
-    <h1>Responsive Material Sidenavigation</h1>
-  </mat-toolbar>
-
-  <mat-sidenav-container autosize>
-    <mat-sidenav [opened]="true" mode="side">
-      <mat-nav-list>
-        <a mat-list-item>
-            <span class="entry">
-               <mat-icon>house</mat-icon>
-               <span *ngIf="!isCollapsed">Dashboard</span>
-            </span>
-         </a>
-      </mat-nav-list> 
-    </mat-sidenav>
-    <mat-sidenav-content>
-      <h2>Content</h2>
-      <router-outlet></router-outlet>
-    </mat-sidenav-content>
-  </mat-sidenav-container>
-</mat-sidenav>
+<div class="side">
+    <nav *ngIf="isOpen">
+      <button class="closeSidebar" (click)="closeSidebar()" style="font-size: 40px ; position: absolute; right: 0;">x</button>
+      <br> 
+      <i class="fa fa-bars"></i><br><br><br>
+      <ul style="text-align: center;">
+        <li>
+          <div>
+          <i class="fas fa-user-circle" style="font-size: 30px;"></i><br>
+        </div><br>
+        <div>
+          <i>{{nom}}</i></div>
+        </li><br>
+        <li><a href="agentpointrelais"><i class="fa fa-home" aria-current="page"></i>délivré colis</a></li>
+        <li><a href="ajoutercolisadélivré">Ajouter colis a délivré</a></li>
+        <li><a href="retourcolis">Retour Colis</a></li>
+        <li class="dropdown" (click)="toggleDropdown($event)">
+          <a class="dropdown-toggle"><i class="fa fa-suitcase"></i>Option </a>
+          <ul class="dropdown-menu" [class.show]="isDropdownOpen">
+            <li><a href="adminPr">Consulter les données personnelles</a></li>
+            <li><a href="affecteradminpointreais">Demande de modification des données personnelles</a></li>
+          </ul>
+        </li>
+        <li><a href="dashboard">Consulter Dashboard</a></li>
+        <li style="order: 999;"><a class="nav-link" href="espace-administrative">Log Out</a></li>
+      </ul>
+    </nav>
+  </div>
+  
+    <!--
+    <div id="main" *ngIf="!isOpen" >
+      <button class="openbtn" (click)="openSidebar()" style="top: auto;">☰</button>
+    </div>-->
+  

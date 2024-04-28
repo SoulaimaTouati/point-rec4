@@ -11,7 +11,7 @@ import { HttpClientModule, provideHttpClient } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { AdminplateformeComponent } from './espaceadminplateforme/adminplateforme/adminplateforme.component';
 import { AdminpointrlaisComponent } from './espaceadminpointrelais/adminpointrlais/adminpointrlais.component';
-import { AgentpointrelaisComponent } from './espaceagentpointrelais/agentpointrelais/agentpointrelais.component';
+import {  AgentpointrelaisComponent } from './espaceagentpointrelais/agentpointrelais/agentpointrelais.component';
 import { SigninComponent } from './account/signin/signin.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -33,6 +33,11 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import{MatListModule} from '@angular/material/list';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
+import { AjoutercolisadelivreComponent } from './espaceagentpointrelais/ajoutercolisadelivre/ajoutercolisadelivre.component';
+import { RetourcolisComponent } from './espaceagentpointrelais/retourcolis/retourcolis.component';
+import { CookieService } from 'ngx-cookie-service';
+import { DashboardComponent } from './espaceadminpointrelais/dashboard/dashboard.component';
+import { CreeragentpointrelaisComponent } from './espaceadminpointrelais/creeragentpointrelais/creeragentpointrelais.component';
 
 
 
@@ -47,12 +52,10 @@ import { MatSelectModule } from '@angular/material/select';
     AdminplateformeComponent,
     SigninComponent,
     AdminpointrlaisComponent,
-    AgentpointrelaisComponent,
     SuiviColisComponent,
     PointrelaisComponent,
     SidebarComponent,
     AddadminplateformeComponent,
-    AgentpointrelaisComponent,
     AdminpointrelaisComponent,
     PointrelaisComponent,
     AffecteradminpointrelaisComponent,
@@ -60,6 +63,11 @@ import { MatSelectModule } from '@angular/material/select';
     AprsidebarComponent,
     ConsulterdashboardComponent,
     AgentsidebarComponent,
+    AgentpointrelaisComponent,
+    AjoutercolisadelivreComponent,
+    RetourcolisComponent,
+    DashboardComponent,
+    CreeragentpointrelaisComponent,
     
   ],
   imports: [
@@ -83,7 +91,7 @@ import { MatSelectModule } from '@angular/material/select';
 
   ],
   providers: [
-  
+  CookieService,
     provideClientHydration(),
         provideAnimationsAsync()
   ],

@@ -1,12 +1,12 @@
 <app-sidebar></app-sidebar>
 <router-outlet></router-outlet>
-<div id="main">
-    <button class="openbtn" (click)="openSidebar()" >☰</button>  
-  </div>
+<div id="main" *ngIf="!isOpen" >
+    <button class="openbtn" (click)="openSidebar()" style="top: 50px;; position: fixed;">☰</button>    
+ </div>
 
   <section class="s1">
     <div class="container" style="font-size: xx-large;">
-welcome 
+welcome {{nom}}
 
 </div>
 </section>
