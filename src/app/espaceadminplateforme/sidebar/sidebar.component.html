@@ -1,31 +1,37 @@
 <div class="side" >
   <nav *ngIf="isOpen">
-    <button class="closeSidebar" (click)="closeSidebar()" style="font-size: 40px ; position: absolute; right: 0;">x</button>
+    <button class="closeSidebar" (click)="closeSidebar()" style="font-size: 30px ; position: absolute; right: 10px; top :10px;color: rgb(16, 35, 120);">x</button>
     <br> 
     <i class="fa fa-bars"></i>
-    <ul style="text-align: center;">
+    <ul style="text-align: left;">
       <li>
-        <div>
+        <div style="text-align: center;">
         <i class="fas fa-user-circle" style="font-size: 30px;"></i><br>
       </div><br>
-      <div>
+      <div style="text-align: center;">
         <i style="font-size: 20px;">{{nom}}</i></div><br>
         <li><a href="adminplateforme"><i class="fa fa-hoome" aria-current="page"></i>Accueil</a></li>
-      <li class="dropdown" (click)="toggleDropdown($event)">
+      <li class="dropdown" (click)="toggleDropdown1($event)"  (mouseenter)="openDropdown(1)" (mouseleave)="closeDropdown(1)">
         <a class="dropdown-toggle"><i class="fa fa-suitcase"></i>Point Relais</a>
-        <ul class="dropdown-menu" [class.show]="isDropdownOpen">
+        <ul class="dropdown-menu" [class.show]="isDropdownOpen1">
           <li><a href="adminPr">Consulter la Liste des administrateur Point Relais</a></li>
           <li><a href="affecteradminpointreais">Ajouter Admin Point Relais</a></li>
         </ul>
       </li>
-      <li><a href="adminPr">Administrateur Point Relais</a></li>
+      <li><a href="addpointsrelais"> Point Relais</a></li>
       <li><a href="addadminp">Ajouter administrateur Plate-forme</a></li>
-      <li><a href="option">Options</a></li>
-      <li><a href="dashboard">Consulter Dashboard</a></li>
+      <li class="dropdown" (click)="toggleDropdown2($event)" (mouseenter)="openDropdown(2)" (mouseleave)="closeDropdown(2)">
+        <a class="dropdown-toggle"><i class="fa fa-suitcase"></i> Options</a>
+        <ul class="dropdown-menu" [class.show]="isDropdownOpen2">
+          <li><a href="donneesadminplateform">Consulter consulter données personnelles</a></li>
+          <li><a href="modifierdonnesplateforme">Modifier données personnelles</a></li>
+        </ul>
+      </li>      <li><a href="dashboardadminp">Consulter Dashboard</a></li>
       <li style="order: 999;"><a class="nav-link" href="espace-administrative">Log Out</a></li>
     </ul>
   </nav>
+  <!--
   <div id="main" *ngIf="!isOpen" >
-    <button class="openbtn" (click)="openSidebar()" style="top: auto;">☰</button>
-  </div>
+    <button class="openbtn" (click)="openSidebar()" style="top: 50px;; position: fixed;">☰</button>    
+ </div>-->
 </div>

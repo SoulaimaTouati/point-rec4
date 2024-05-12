@@ -12,22 +12,26 @@
       <table class="table">
         <thead>
           <tr>
+            <th>Nom</th>
             <th>Numéro du point relais</th>
             <th>Adresse</th>
             <th>Numéro de téléphone</th>
             <th>Capacité maximale</th>
             <th>Taux de saturation</th>
             <th>Nom de l'agent</th>
+            <th>Région</th>
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let pointRelais of pointsRelais">
+            <td>{{ pointRelais.nom }}</td>
             <td>{{ pointRelais.num_pointrelais }}</td>
             <td>{{ pointRelais.adresse }}</td>
             <td>{{ pointRelais.num_telephone }}</td>
             <td>{{ pointRelais.capacite_max }}</td>
             <td>{{ pointRelais.taux_saturation }}</td>
             <td>{{ pointRelais.nom_agent }}</td>
+            <td>{{ pointRelais.Region }}</td>
           </tr>
         </tbody>
       </table>

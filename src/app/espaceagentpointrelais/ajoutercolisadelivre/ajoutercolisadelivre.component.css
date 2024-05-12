@@ -1,52 +1,235 @@
-.openbtn{
-    height: 6vh;
-    top: auto;
-    font-size: xx-large;
-    background-color: rgb(16, 35, 120);
-    color: white;
+section {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  position: absolute;
+  top: 0;
+  left: 270px;
+  height: 100vh;
+  width: calc(100% - 270px);
+  padding: 30px;
+  transition: ease-in 0.3s;
+}
+
+.s1{
+  padding: 100px;
+}
+
+.container{
+   /* largeur  */
+  width: 900px;
+  /* centre l'élément horizontalement en utilisant auto pour les marges gauche et droite */
+  margin: 0 auto; 
+  /* bordure de 2px en gras et noire 
+  border: 2px solid rgb(16, 35, 120) ;*/ 
+  font-weight: bold; 
+  /* espacement intérieur de votre choix */
+  padding: 20px; 
+  /* centre le texte à l'intérieur de l'élément */
+  text-align: center; 
+  background-color: white;
+  /*background-color: rgb(199, 195, 195);*/
+  opacity: 0.85;
+  border-radius: 50px;
+  overflow: hidden; 
+  box-shadow: 5px 5px 50px rgba(0, 0, 0, 0.5); /* 5px horizontal offset, 5px vertical offset, 10px blur radius, 0.5 opacity */
+
 
 }
+.btnrecherche {
+  display: flex;
+  justify-content: flex-end;
+  padding: 5px;
+}
+.btnrecherche button {
+padding: 5px 10px; 
+font-size: 14px; 
+border-radius: 10px;
+border: 1px solid rgb(16, 35, 120); 
+background-color: rgb(16, 35, 120); 
+color: #333; 
+
+}
+.btnrecherche button:hover {
+background-color:white ;
+color: #f0f0f0;
+}
+.btnrecherche{
+padding: 5px;
+
+}
+.centered-placeholder::placeholder {
+text-align: center; /* Centrer le texte du placeholder */
+}
+
+.liste{
+display: flex;
+justify-content: flex-start;
+padding: 50px;
+}
+.table-bordered {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.table-bordered th,
+.table-bordered td {
+  border: 1px solid rgb(243, 240, 238);
+  padding: 8px;
+  text-align: left;
+}
+.table-bordered th {
+  background-color: #f2f2f2;
+}
+
+.table {
+border-collapse: collapse;
+width: 100%;
+border-radius: 20px;
+  overflow: hidden; /* Obligatoire pour que le border-radius fonctionne */
+
+}
+
+th, td {
+/* border: 1px solid rgb(176, 174, 172);*/
+text-align: left;
+padding: 8px;
+}
+
+th {
+background-color: #f2f2f2;
+}
+.sidebar{
+position: absolute;
+top: auto; 
+left: 0; 
+height: 200vh; 
+z-index: 999; 
+}
+
+.openbtn{
+  height: 6vh;
+  top: auto;
+  font-size: xx-large;
+  background-color: rgb(16, 35, 120);
+  color: white;
+  border-radius: 50px;
+  overflow: hidden; 
+}
 .openbtn:hover{
-    color: rgb(247, 111, 0);
+  color: rgb(247, 111, 0);
 }
-section {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    position: absolute;
-    top: 0;
-    left: 270px;
-    height: 100vh;
-    width: calc(100% - 270px);
-    padding: 30px;
-    transition: ease-in 0.3s;
-  }
-  .s1{
-    padding: 100px;
+
+/* Style pour  sort dropdown */
+.sort-container {
+position: relative;
+display: inline-block;
 }
-.container{
-    /* largeur  */
-   width: 50%;
-   /* pour centrer l'élément horizontalement en utilisant auto pour les marges gauche et droite */
-   margin: 0 auto; 
-   /* bordure de 2px en gras et noire */
-   border: 3px solid rgb(16, 35, 120) ; 
-   font-weight: bold; 
-   /* espacement intérieur de votre choix */
-   padding: 20px; 
-   /* centre le texte à l'intérieur de l'élément */
-   text-align: center; 
-   background-color: rgb(199, 195, 195);
-   height: fit-content;
- }
- .btnajouter{
-    color:rgb(247, 111, 0) ;
-    background-color: rgb(16, 35, 120);
-    border: 1px solid rgb(16, 35, 120) ;
-    height: 30px; 
-    width: 100px;
-    font-size: large;
+
+
+/* Style pour le contenus du sort dropdown  */
+.sort-dropdown {
+display: none;
+position: absolute;
+background-color: rgb(16, 35, 120);
+min-width: 160px;
+box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+z-index: 1;
+}
+
+/* Style pour le dropdown buttons */
+.sort-dropdown button {
+background-color: inherit;
+width: 100%;
+text-align: left;
+cursor: pointer;
+padding: 10px;
+border: 1px solid rgb(16, 35, 120);
+outline: none;
+}
+
+/* Show the sort dropdown when hover over the sort button */
+.sort-container:hover .sort-dropdown {
+display: block;
+}
+input::placeholder {
+color: rgb(247, 111, 0);
+font-size: medium;
+}
+
+.btnconsulter{
+border: 1.5px solid rgb(16, 35, 120);
+justify-content:space-around;
+
+}
+.btnconsulter:hover{
+background-color: rgb(16, 35, 120);
+color:rgb(247, 111, 0) ;
+
+}
+
+
+.bck {
+position: fixed;
+background-size: cover; /* Pour que l'image de fond couvre toute la zone */
+background-position: center; /* Pour centrer l'image de fond */
+background-repeat: no-repeat;
+}
+
+
+
+.btndelivre{
+  background-color:rgb(16, 35, 120) ;
+color: rgb(247, 111, 0);
+border: 2px solid rgb(16, 35, 120); 
+}
+
+.btndelivre:hover{
+background-color: white;
+
+}
+
+.btndelivre{
+  background-color:rgb(16, 35, 120) ;
+color: rgb(247, 111, 0);
+border: 2px solid rgb(16, 35, 120); 
+}
+
+.btndelivre:hover{
+background-color: white;
+
+}
+.bck{
+  position: fixed;
+}
+label {
+  display: inline-block;
+  width: 120px; /* Adjust the width according to your design */
+  margin-right: 10px;
+  border-radius: 5px;
+  color: rgb(16, 35, 120);
+  font-size: small;
+
+}
+
+input {
+  width: calc(50% - 130px); /* Adjust the width according to your design */
+  border-radius: 5px;
+}
+.btnajouter{
+  color:rgb(247, 111, 0) ;
+  background-color: rgb(16, 35, 120);
+  border: 1px solid rgb(16, 35, 120) ;
+  height: 30px; 
+  width: 100px;
+  font-size: large;
+  border-radius: 5px;
+
+}
+input::placeholder {
+  color: rgb(247, 111, 0);
+  font-size: medium;
   }
-  .btnajouter:hover{
-    background-color:white ;
-  }
+.btnajouter:hover{
+  background-color:white ;
+}

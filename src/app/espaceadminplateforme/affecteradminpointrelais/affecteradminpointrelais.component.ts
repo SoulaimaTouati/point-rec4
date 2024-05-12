@@ -57,12 +57,14 @@ export class AffecteradminpointrelaisComponent implements OnInit {
     this.adminpointrelaisService.ajouterAdminPointRelais(nouvelAdmin).subscribe(
         (response) => {
             console.log('Admin point relais ajouté avec succès:', response);
-            this.idadminpointrelais = response.idadminpointrelais; // Mettre à jour idadminpointrelais avec l'ID généré automatiquement
-            this.onUpdatePointRelais(this.selectedPointRelaisId, this.idadminpointrelais); // Appeler onUpdatePointRelais après l'ajout avec les bonnes valeurs
+            // Mettre à jour idadminpointrelais avec l'ID généré automatiquement
+            this.idadminpointrelais = response.idadminpointrelais; 
+            // Appele onUpdatePointRelais après l'ajout avec les bonnes valeurs
+            this.onUpdatePointRelais(this.selectedPointRelaisId, this.idadminpointrelais); 
         },
         (error) => {
             console.error('Erreur lors de l\'ajout de l\'admin point relais:', error);
-            // Gérer les erreurs, afficher un message d'erreur à l'utilisateur, etc.
+            // partie pour Gérer les erreurs, afficher un message d'erreur à l'utilisateur, etc.
         }
     );
 }
@@ -71,11 +73,11 @@ export class AffecteradminpointrelaisComponent implements OnInit {
     this.pointrelaisService.updatePointRelais(idPointRelais, idAdminPointRelais).subscribe(
       (response) => {
         console.log('Point relais updated successfully:', response);
-        // Mettre à jour l'interface utilisateur ou effectuer d'autres actions nécessaires après la mise à jour
+        // Mettre à jour l'interface utilisateur 
       },
       (error) => {
         console.error('Error updating point relais:', error);
-        // Gérer les erreurs, afficher un message d'erreur à l'utilisateur, etc.
+        // Gérer les erreurs
       }
     );
   }

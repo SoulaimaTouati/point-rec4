@@ -20,15 +20,20 @@
     width: 900px;
     /* centre l'élément horizontalement en utilisant auto pour les marges gauche et droite */
     margin: 0 auto; 
-    /* bordure de 2px en gras et noire */
-    border: 2px solid rgb(16, 35, 120) ; 
+    /* bordure de 2px en gras et noire 
+    border: 2px solid rgb(16, 35, 120) ;*/ 
     font-weight: bold; 
     /* espacement intérieur de votre choix */
     padding: 20px; 
     /* centre le texte à l'intérieur de l'élément */
     text-align: center; 
-    background-color: rgb(199, 195, 195);
-    
+    background-color: white;
+    /*background-color: rgb(199, 195, 195);*/
+    opacity: 0.85;
+    border-radius: 50px;
+    overflow: hidden; 
+    box-shadow: 5px 5px 50px rgba(0, 0, 0, 0.5); /* 5px horizontal offset, 5px vertical offset, 10px blur radius, 0.5 opacity */
+
   
   }
   .btnrecherche {
@@ -39,10 +44,11 @@
 .btnrecherche button {
   padding: 5px 10px; 
   font-size: 14px; 
-  border-radius: 5px;
+  border-radius: 10px;
   border: 1px solid rgb(16, 35, 120); 
   background-color: rgb(16, 35, 120); 
   color: #333; 
+  
 }
 .btnrecherche button:hover {
   background-color:white ;
@@ -52,7 +58,9 @@
   padding: 5px;
 
 }
-
+.centered-placeholder::placeholder {
+  text-align: center; /* Centrer le texte du placeholder */
+}
 
 .liste{
 display: flex;
@@ -66,7 +74,7 @@ padding: 50px;
   
   .table-bordered th,
   .table-bordered td {
-    border: 1px solid rgb(16, 35, 120);
+    border: 1px solid rgb(243, 240, 238);
     padding: 8px;
     text-align: left;
   }
@@ -77,10 +85,13 @@ padding: 50px;
 .table {
   border-collapse: collapse;
   width: 100%;
+  border-radius: 20px;
+    overflow: hidden; /* Obligatoire pour que le border-radius fonctionne */
+
 }
 
 th, td {
-  border: 1px solid rgb(16, 35, 120);
+ /* border: 1px solid rgb(176, 174, 172);*/
   text-align: left;
   padding: 8px;
 }
@@ -102,13 +113,14 @@ th {
     font-size: xx-large;
     background-color: rgb(16, 35, 120);
     color: white;
-
+    border-radius: 50px;
+    overflow: hidden; 
 }
 .openbtn:hover{
     color: rgb(247, 111, 0);
 }
 
-/* Style for the sort dropdown */
+/* Style pour  sort dropdown */
 .sort-container {
   position: relative;
   display: inline-block;
@@ -155,3 +167,12 @@ background-color: rgb(16, 35, 120);
 color:rgb(247, 111, 0) ;
 
 }
+
+
+.bck {
+  position: fixed;
+ background-size: cover; /* Pour que l'image de fond couvre toute la zone */
+ background-position: center; /* Pour centrer l'image de fond */
+ background-repeat: no-repeat;
+}
+

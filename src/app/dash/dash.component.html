@@ -1,0 +1,58 @@
+<!-- dash.component.html -->
+
+<div class="grid-container">
+  <h1 class="mat-h1">Dashboard</h1>
+  <mat-grid-list cols="2" rowHeight="350px">
+    <ng-container *ngFor="let card of cards | async">
+      <mat-grid-tile [colspan]="card.cols" [rowspan]="card.rows">
+        <mat-card class="dashboard-card">
+          <mat-card-header>
+            <mat-card-title>
+              {{card.title}}
+              <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
+                <mat-icon>more_vert</mat-icon>
+              </button>
+              <mat-menu #menu="matMenu" xPosition="before">
+                <button mat-menu-item>Expand</button>
+                <button mat-menu-item>Remove</button>
+              </mat-menu>
+            </mat-card-title>
+          </mat-card-header>
+          <mat-card-content class="dashboard-card-content">
+            <div>
+              <p>Nom: {{card.data.nom}}</p>
+              <p>Adresse: {{card.data.adresse}}</p>
+              <p>Numéro de téléphone: {{card.data.num_telephone}}</p>
+              <p>Capacité maximale: {{card.data.capacite_max}}</p>
+              <p>Taux de saturation: {{card.data.taux_saturation}}</p>
+              <p>Nom de l'agent: {{card.data.nom_agent}}</p>
+              <p>Région: {{card.data.Region}}</p>
+              <!-- Add more properties as needed -->
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </mat-grid-tile>
+    </ng-container>
+  </mat-grid-list>
+</div>
+<!-- Dans votre fichier HTML (par exemple dash.component.html) -->
+
+
+<div>
+  <label for="regionSelect">Sélectionnez une région:</label>
+  <select id="regionSelect" [(ngModel)]="selectedRegion" (change)="onRegionChange()">
+    <option *ngFor="let region of regions" [value]="region">{{region}}</option>
+  </select>
+</div>
+
+<div class="point-relais-count-container">
+  <p>Nombre de points relais dans la région sélectionnée:</p>
+  <div class="point-relais-count">{{numberOfPointRelais}}</div>
+</div>
+
+
+
+
+
+
+

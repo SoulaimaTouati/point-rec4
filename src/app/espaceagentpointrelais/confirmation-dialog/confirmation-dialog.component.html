@@ -1,0 +1,25 @@
+
+<!--<div mat-dialog-content class="custom-dialog">
+      <button mat-icon-button class="close-button" (click)="onNoClick()" aria-label="Close" >   x     
+      </button>
+    <p style="font-size: x-large;color: black;">{{ data.message }}</p>
+    <div class="line"></div>
+    <div mat-dialog-actions class="btn">
+      <button mat-button color="primary" class="yesb" (click)="onYesClick()">Oui</button> &nbsp;
+      <button mat-button color="warn" class="nob" (click)="onNoClick()">Non</button>
+    </div>
+  </div>
+-->
+<div mat-dialog-content class="custom-dialog">
+
+    <button mat-icon-button class="close-button" (click)="onNoClick()" aria-label="Fermer">
+      <span>×</span> 
+    </button><br><br>
+    <p style="font-size: x-large;color: black;">{{ data.message }}</p>
+    <div class="line"></div>
+    <div mat-dialog-actions class="btn">
+      <button mat-button color="primary" class="yesb" (click)="onYesClick()">Oui</button> &nbsp;
+      <button mat-button color="warn" class="nob" (click)="onNoClick()">Non</button>
+    </div>
+  </div>
+  

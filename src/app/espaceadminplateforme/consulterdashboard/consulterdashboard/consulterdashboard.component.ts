@@ -12,16 +12,16 @@
     styleUrls: ['./consulterdashboard.component.css']
   })
   export class ConsulterdashboardComponent implements OnInit {
+    
     pointsRelais: PointRelais[] = [];
     name: string = '';
     lastname: string = '';
     isOpen: boolean = true;
 
+
     constructor(private aprsidebarservice: AprsidebarService, private router: Router, private route: ActivatedRoute, private adminPointRelaisService:AdminPointRelaisService) { }
 
     ngOnInit(): void {
-
-
         this.aprsidebarservice.isOpen$.subscribe(isOpen => {
           this.isOpen = isOpen;
         });

@@ -1,0 +1,99 @@
+.sidebar{
+    position: absolute;
+    top: auto; 
+    left: 0; 
+    height: 200vh; 
+    z-index: 999;
+      }
+  
+      section {
+          display: flex;
+          justify-content: center;
+          align-items: flex-start;
+          position: absolute;
+          top: 0;
+          left: 270px;
+          height: 100vh;
+          width: calc(100% - 270px);
+          padding: 30px;
+          transition: ease-in 0.3s;
+        }
+        .s1{
+          padding: 100px;
+      }
+      .container{
+          /* largeur  */
+         width: 900px;
+         /* centre l'élément horizontalement en utilisant auto pour les marges gauche et droite */
+         margin: 5% auto; 
+         /* bordure de 2px en gras et noire 
+         border: 3px solid rgb(16, 35, 120) ; */
+         font-weight: bold; 
+         /* espacement intérieur de votre choix */
+         padding: 20px; 
+         /* centre le texte à l'intérieur de l'élément */
+         text-align: center; 
+         background-color: white;
+         border-radius: 50px;
+         opacity: 0.8;
+         color: rgb(16, 35, 120);
+        }
+       label {
+        display: inline-block;
+        width: 120px; /* Adjust the width according to your design */
+        margin-right: 10px;
+        border-radius: 5px;
+        color: rgb(16, 35, 120);
+        font-size: small;
+
+      }
+      
+      input {
+        width: calc(50% - 130px); /* Adjust the width according to your design */
+        border-radius: 5px;
+      }
+  
+       .openbtn{
+        height: 6vh;
+        top: auto;
+        font-size: xx-large;
+        background-color: rgb(16, 35, 120);
+        color: white;
+    
+    }
+    .openbtn:hover{
+        color: rgb(247, 111, 0);
+    }
+    .btnajouter{
+      color:rgb(247, 111, 0) ;
+      background-color: rgb(16, 35, 120);
+      border: 1px solid rgb(16, 35, 120) ;
+      height: 30px; 
+      width: 100px;
+      font-size: large;
+      border-radius: 5px;
+
+    }
+    input::placeholder {
+      color: rgb(247, 111, 0);
+      font-size: medium;
+      }
+    .btnajouter:hover{
+      background-color:white ;
+    }
+    .bck{
+      position: fixed;
+    }
+    custom-snackbar {
+      justify-content: start;
+      align-items: center;
+      position: fixed;
+      top: 50%; /* Place le SnackBar à mi-hauteur */
+      left: 50%; /* Place le SnackBar à mi-largeur */
+      transform: translate(-5%, -5%); /* Centre le SnackBar */
+      margin: 5% auto;
+    }
+    
+    .white-background{
+      background-color: white;
+    }

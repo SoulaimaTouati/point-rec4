@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 export class PointrelaisService {
 
   private apiUrl = 'http://localhost:3000/pointrelais'; 
-
+  private baseUrl  = 'http://localhost:3000/pointrelais'; 
   constructor(private http: HttpClient) {}
 
  
@@ -22,9 +22,18 @@ export class PointrelaisService {
     const url = `http://localhost:3000/adminpointrelais/update/${idPointRelais}/${idAdminPointRelais}`;
     return this.http.put(url, {});
   }
-
+  ajouterPointrelais(newpointrelais: PointRelais): Observable<PointRelais> {
+    return this.http.post<PointRelais>(`${this.apiUrl}/creer`, newpointrelais);
+  }
+  getNumberOfPointRelais(region: string): Observable<number> {
+    return this.http.get<number>(`${this.apiUrl}/${region}/count`);
+  }
+    changesaturation(num: number): Observable<any> {
+      return this.http.post(`${this.baseUrl}/${num}/tauxsaturation`, {});
+    }
+  }
   
-}
+
 
 
 

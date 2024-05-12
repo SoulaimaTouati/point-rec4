@@ -1,1 +1,9 @@
 <p>consulterdashboard works!</p>
+<!-- dashboard.component.html -->
+
+<p>Dashboard</p>
+
+<!-- Utilisez les données récupérées pour afficher votre dashboard ici -->
+<div *ngFor="let item of colisData">
+  <p>{{ item.state }}: {{ item.count }}</p>
+</div>

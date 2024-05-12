@@ -4,6 +4,7 @@ import { MatSidenav } from '@angular/material/sidenav';
 import { AprsidebarService } from '../../../services/aprsidebar.service';
 import { CookieService } from 'ngx-cookie-service';
 import { AuthentificationService } from '../../../services/authentification.service';
+import { ColisService } from '../../../services/colis.service';
 
 @Component({
   selector: 'app-agentsidebar',
@@ -11,7 +12,9 @@ import { AuthentificationService } from '../../../services/authentification.serv
   styleUrls: ['./agentsidebar.component.css']
 })
 export class AgentsidebarComponent implements OnInit {
-  constructor(private aprsidebarservice: AprsidebarService,private cookieService: CookieService , private authService:AuthentificationService){}
+  constructor(private aprsidebarservice: AprsidebarService,private cookieService: CookieService , private authService:AuthentificationService,
+   
+  ){}
 
   isOpen: boolean = true;
   nom: string = '';
@@ -25,20 +28,33 @@ export class AgentsidebarComponent implements OnInit {
     });
   }
   isCollapsed: boolean = false;
- isDropdownOpen: boolean = false;
 
   toggleDropdown(event: Event) {
    // event.preventDefault(); // Empêche le lien de suivre son URL
     this.isDropdownOpen = !this.isDropdownOpen;
   }
 
+  
+/*
   toggleCollapse() {
     this.isCollapsed = !this.isCollapsed;
   }
 
-  openSidebar() {
+  /*openSidebar() {
     this.aprsidebarservice.openSidebar();
+  }*/
+  isDropdownOpen: boolean = false;
+
+  
+  openDropdown(): void {
+      this.isDropdownOpen = true;
+  
   }
+
+  closeDropdown(): void {
+      this.isDropdownOpen = false;
+    
+    }
   closeSidebar() {
     this.aprsidebarservice.closeSidebar();
   }

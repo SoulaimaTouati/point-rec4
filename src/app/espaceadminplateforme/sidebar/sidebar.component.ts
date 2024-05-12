@@ -17,7 +17,7 @@ export class SidebarComponent implements OnInit {
   nom: string = '';
   userId:number=0;
   ngOnInit() {
-    // Souscrivez à l'observable isOpen$ pour écouter les changements de la valeur isOpen
+    //observable isOpen$ pour écouter les changements de la valeur isOpen
     this.aprsidebarservice.isOpen$.subscribe(isOpen => {
       this.isOpen = isOpen;
       this.cookieService.set('username', 'valeur-du-username');
@@ -25,12 +25,17 @@ export class SidebarComponent implements OnInit {
     });
   }
   isCollapsed: boolean = false;
- isDropdownOpen: boolean = false;
+ isDropdownOpen1: boolean = false;
+ isDropdownOpen2: boolean = false;
 
-  toggleDropdown(event: Event) {
+  toggleDropdown1(event: Event) {
    // event.preventDefault(); // Empêche le lien de suivre son URL
-    this.isDropdownOpen = !this.isDropdownOpen;
+    this.isDropdownOpen1 = !this.isDropdownOpen1;
   }
+  toggleDropdown2(event: Event) {
+    // event.preventDefault(); // Empêche le lien de suivre son URL
+     this.isDropdownOpen2 = !this.isDropdownOpen2;
+   }
 
   toggleCollapse() {
     this.isCollapsed = !this.isCollapsed;
@@ -42,4 +47,21 @@ export class SidebarComponent implements OnInit {
   closeSidebar() {
     this.aprsidebarservice.closeSidebar();
   }
+
+  openDropdown(dropdownNumber: number): void {
+    if (dropdownNumber === 1) {
+      this.isDropdownOpen1 = true;
+      this.isDropdownOpen2 = false; // Fermer l'autre dropdown si ouvert
+    } else if (dropdownNumber === 2) {
+      this.isDropdownOpen2 = true;
+      this.isDropdownOpen1 = false; // Fermer l'autre dropdown si ouvert
+    }
+  }
+
+  closeDropdown(dropdownNumber: number): void {
+    if (dropdownNumber === 1) {
+      this.isDropdownOpen1 = false;
+    } else if (dropdownNumber === 2) {
+      this.isDropdownOpen2 = false;
+    }}
 }

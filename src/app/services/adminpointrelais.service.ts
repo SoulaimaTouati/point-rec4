@@ -9,7 +9,8 @@ import { catchError } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class AdminPointRelaisService {
-  private apiUrl = 'http://localhost:3000/adminpointrelais'; // URL de votre API NestJS pour les administrateurs de point relais
+  //c'est l' URL de l'api NestJS pour les administrateurs de point relais
+  private apiUrl = 'http://localhost:3000/adminpointrelais'; 
   private addurl = `http://localhost:3000/adminpointrelais/creer`;
 
   constructor(private http: HttpClient) {}

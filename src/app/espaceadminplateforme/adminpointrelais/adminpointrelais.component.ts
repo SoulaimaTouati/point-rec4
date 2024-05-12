@@ -37,6 +37,7 @@ export class AdminpointrelaisComponent implements OnInit {
     // Utilisez la fonction `sort` de lodash pour trier les administrateurs par nom
     this.adminPointRelaisList = sortBy(this.adminPointRelaisList, ['nom']);
   }
+  
 
   // Méthode de tri pour le prénom
   sortByFirstname(): void {
@@ -77,14 +78,14 @@ export class AdminpointrelaisComponent implements OnInit {
       this.sortByFirstname();
     }
   }
-
+/*
   toggleFormulaire(): void {
     this.afficherFormulaire = !this.afficherFormulaire;
  
-  }
+  }*/
 
   ajouterResponsable(): void {
-    // cest pour ajouter le responsable //la logique
+    // cest pour ajouter le responsable 
     console.log('Nom:', this.nom);
     console.log('Prénom:', this.prenom);
   }
@@ -132,24 +133,6 @@ consulterPointsRelais(idadminpointrelais: number): void {
       }
     );
 }
-/*
-  search(): void {
-    if (this.searchQuery.trim() !== '') {
-      this.adminPointRelaisService.searchAdminPointRelais(this.searchQuery).subscribe(
-        (response) => {
-          this.adminPointRelaisList = response;
-        },
-        (error) => {
-          console.error('Erreur lors de la recherche :', error);
-          // Gérez l'erreur ici, par exemple en affichant un message à l'utilisateur
-        }
-      );
-    } else {
-      // Si la requête de recherche est vide, réinitialisez la liste des administrateurs
-      this.adminPointRelaisList = [];
-    }
-  }*/
-
   openSidebar() {
     this.aprsidebarservice.openSidebar();
   }
@@ -169,7 +152,7 @@ consulterPointsRelais(idadminpointrelais: number): void {
       console.log('Résultat de la recherche :', filteredAdmins);
       this.adminPointRelaisList = filteredAdmins;
     } else {
-      // Si la requête de recherche est vide, réinitialisez la liste des administrateurs
+      // Si la requête de recherche est vide, réinitialise la liste des administrateurs
       this.loadAdminPointRelais();
     }
   }

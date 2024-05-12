@@ -2,23 +2,23 @@
     <nav *ngIf="isOpen">
       <button class="closeSidebar" (click)="closeSidebar()" style="font-size: 40px ; position: absolute; right: 0;">x</button>
       <br> 
-      <i class="fa fa-bars"></i><br><br><br>
+      <i class="fa fa-bars"></i><br>
       <ul style="text-align: center;">
         <li>
-          <div>
-          <i class="fas fa-user-circle" style="font-size: 30px;"></i><br>
+          <div style="text-align: center;">
+            <i class="fas fa-user-circle" style="font-size: 30px;"></i><br>
         </div><br>
-        <div>
-          <i>{{nom}}</i></div>
+        <div style="text-align: center;">
+          <i style="font-size: 20px;">{{nom}}</i></div><br>
         </li><br>
         <li><a href="agentpointrelais"><i class="fa fa-home" aria-current="page"></i>délivré colis</a></li>
         <li><a href="ajoutercolisadélivré">Ajouter colis a délivré</a></li>
         <li><a href="retourcolis">Retour Colis</a></li>
-        <li class="dropdown" (click)="toggleDropdown($event)">
+        <li class="dropdown" (click)="toggleDropdown($event)"(mouseenter)="openDropdown()" (mouseleave)="closeDropdown()">
           <a class="dropdown-toggle"><i class="fa fa-suitcase"></i>Option </a>
           <ul class="dropdown-menu" [class.show]="isDropdownOpen">
-            <li><a href="adminPr">Consulter les données personnelles</a></li>
-            <li><a href="affecteradminpointreais">Demande de modification des données personnelles</a></li>
+            <li style="width: auto;"><a href="adminPr">Consulter les données personnelles</a></li>
+            <li style="width: auto;"><a href="affecteradminpointreais">Demande de modification des données personnelles</a></li>
           </ul>
         </li>
         <li><a href="dashboard">Consulter Dashboard</a></li>

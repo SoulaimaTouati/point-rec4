@@ -1,12 +1,14 @@
 export interface Colis {
-    id_pointrelais: number; 
-    num_pointrelais: number; 
-    adresse: string; 
-    num_telephone: number; 
-    capacite_max: number[]; 
-    taux_saturation: number[]; 
-    nom_agent: string; 
-    idadminpointrelais	: number; 
-   
+  num_Colis: number; 
+  description: string; 
+  poids: number; 
+  nom_Expediteur: string; 
+  nom_Destinataire: string; 
+  numPointRelaisDestinataire: number; 
+  dateExpedition: Date; 
+  dateLivraison	: Date; 
+  etatColis : string;
+  adresse : string;
+  id_Colis : number;
   }
  

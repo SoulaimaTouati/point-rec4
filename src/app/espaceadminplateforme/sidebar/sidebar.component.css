@@ -1,11 +1,7 @@
 
 body {
-   /* position: relative;
-    height: 100vh;
-    width: 250;
-    background: rgb(226, 226, 233);
-    margin: 0; /* Supprime la marge par défaut du body */
-    font-family: Arial, sans-serif; /* Assure une police de caractères appropriée */
+   
+    font-family: Arial, sans-serif; 
     position: absolute;
 display: none;
 top:0%;
@@ -18,9 +14,16 @@ top:0%;
     width: 270px;
     height: fit-content;
     min-height: 350px;
-    color: white;
-    background-color: rgb(16, 35, 120);
+    color: rgb(16, 35, 120);
+    /*
+    background-color: rgb(16, 35, 120);*/
+    background-color: white;
     top:7% ;
+    opacity: 0.85;
+    border-top-right-radius: 50px; /* Adjust the value as needed */
+    border-bottom-right-radius: 50px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5); /* 5px horizontal offset, 5px vertical offset, 10px blur radius, 0.5 opacity */
+
   }
   
   nav span {
@@ -38,12 +41,14 @@ top:0%;
   
   nav li {
     width: 100%;
+    padding-bottom: 3.5px; 
+
   }
   
   nav a {
     display: block;
     padding: 22px;
-    color: white;
+    color: rgb(16, 35, 120);
     text-decoration: none;
     font-size: 20px;
     transition: ease-in 0.1s;
@@ -81,18 +86,18 @@ top:0%;
 }
 nav li {
     width: auto;
-    border-bottom: 1px solid white; 
-  /* padding-bottom: 4px;*/ 
+    border-bottom: 1px solid rgb(16, 35, 120); 
   }
   .dropdown-menu {
     display: none;
-    background-color: rgb(16, 35, 120);
+    background-color: white;
+    opacity: 1;
     position: absolute;
     top: 0%;
     left: 99%;
    /* padding: 200;*/
     z-index: 999;
-    width: 155%;
+    width: 190%;
   }
   
   .dropdown-menu.show {

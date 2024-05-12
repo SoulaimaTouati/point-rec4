@@ -1,0 +1,59 @@
+<div>
+    <app-sidebar></app-sidebar>
+    <router-outlet></router-outlet>
+    <div id="main" *ngIf="!isOpen" >
+        <button class="openbtn" (click)="openSidebar()" style="top: 50px;background-color: rgb(16, 35, 120); position: fixed;">☰</button>    
+     </div></div>
+     <section class="s1">
+        <div class="container">
+            <div>   
+                <h2>saisir les données relatives au pointRelais que vous voulez ajouter : </h2>
+                <div>
+                </div>
+                <div>
+                    <form class="form6" (ngSubmit)="onSubmit(form)" #form="ngForm">
+                        <br>
+                        <div>
+                            <label for="adresse">Adresse</label>
+                            <input type="adresse" id="adresse" name="adresse" [(ngModel)]="adresse"  placeholder="Adresse">
+                        </div><br>
+                        <div>
+                            <label for="num_telephone">Numéro de téléphone</label>
+                            <input type="number" id="num_telephone" name="num_telephone" [(ngModel)]="num_telephone" placeholder="num_telephone">
+                        </div><br>
+                        <div>
+                            <label for="capacite_max">Capacité maximale</label>
+                            <input type="number" id="capacite_max" name="capacite_max" [(ngModel)]="capacite_max" placeholder="capacite_max">
+                        </div><br>
+                        <div>
+                            <label for="taux_saturation">Taux de saturation</label>
+                            <input type="number" id="taux_saturation" name="taux_saturation" [(ngModel)]="taux_saturation" placeholder="taux_saturation">
+                        </div><br>
+                                                                    <!--
+
+                        <div>
+                            <label for="nom_agent">Nom de l'agent</label>
+                            <input type="text" id="nom_agent" name="nom_agent" [(ngModel)]="nom_agent" placeholder="Nom de l'Agent">
+                        </div><br>
+                    -->
+    
+                                            <!--
+    
+                        <div>
+                            <label>Sélectionnez l'état de colis</label>
+                            <select id="etat" name="etat" >
+                                <option  [value]="">délivré</option>
+                                <option  [value]="">en retour</option>
+                                <option  [value]="">en attend</option>
+    
+    
+                            </select>
+                        </div>-->
+                        <br>    
+                        <button type="submit" class="btnajouter">Ajouter</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+            </section>     
+            

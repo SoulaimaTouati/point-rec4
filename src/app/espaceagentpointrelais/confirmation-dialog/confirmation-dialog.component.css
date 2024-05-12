@@ -1,0 +1,48 @@
+.custom-dialog {
+    border: 2px solid rgb(16, 35, 120);
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+    background-color: #e3dede;
+  }
+
+  .line {
+    border-top: 2px solid rgb(16, 35, 120); /* Définition de la ligne avec une bordure supérieure de 1 pixel solide et couleur grise */
+    margin-top: 20px; /* Espacement entre la ligne et le contenu précédent */
+    margin-bottom: 20px; /* Espacement entre la ligne et le contenu suivant */
+  }
+  .yesb{
+    background-color:rgb(16, 35, 120) ;
+    color: rgb(247, 111, 0);
+    border: 2px solid rgb(16, 35, 120);
+  }
+  .yesb:hover{
+    background-color: white;
+  }
+  .nob{
+    background-color:rgb(16, 35, 120) ;
+    color: rgb(247, 111, 0);
+    border: 2px solid rgb(16, 35, 120);
+  }
+  .nob:hover{
+    background-color: white;
+  }
+
+  .close-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 5px;
+    margin-right: 5px;
+    background-color:rgb(16, 35, 120) ;
+    color: rgb(247, 111, 0);
+    border: 2px solid rgb(16, 35, 120);
+  }
+  
+  .close-button span {
+    font-size: 20px;
+  }
+  .close-button:hover{
+    background-color: white;
+
+  }

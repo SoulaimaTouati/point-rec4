@@ -1,0 +1,28 @@
+<nav class="sidebar">
+    <app-sidebar></app-sidebar>
+    <router-outlet></router-outlet>
+    <div id="main" *ngIf="!isOpen" >
+      <button class="openbtn" (click)="openSidebar()" style="top: 50px;; position: fixed;">☰</button>    
+   </div>
+  </nav>
+  <section class="s1">
+    <div class="container">
+      <form class="form6" (submit)="modifier()">
+        <label>Nom</label>&nbsp;&nbsp;
+        <input type="text"  placeholder="{{ nom }}" readonly><br>
+        <label>Prenom</label>&nbsp;&nbsp;
+        <input type="text" [(ngModel)]="nouveauPrenom" name="nouveauPrenom" placeholder="{{ prenom }}"><br>   
+        <label>E-mail</label>&nbsp;&nbsp;
+        <input type="email" [(ngModel)]="nouveauEmail" name="nouveauEmail" placeholder="{{ email }}"><br>
+        <label>Numéro de téléphone</label>&nbsp;&nbsp;
+        <input type="number" [(ngModel)]="nouveauPhone" name="nouveauPho" placeholder="{{ phone }}"><br>
+        <label>Mot de passe</label>&nbsp;&nbsp;
+        <input type="text" placeholder="{{ password }}" readonly><br>
+        <button type="submit" class="btnajouter">Modifier</button>
+      </form>
+      
+      
+      
+    </div>
+  </section>
+  

@@ -38,7 +38,17 @@ import { RetourcolisComponent } from './espaceagentpointrelais/retourcolis/retou
 import { CookieService } from 'ngx-cookie-service';
 import { DashboardComponent } from './espaceadminpointrelais/dashboard/dashboard.component';
 import { CreeragentpointrelaisComponent } from './espaceadminpointrelais/creeragentpointrelais/creeragentpointrelais.component';
-
+import { DashboardadminpComponent } from './espaceadminplateforme/dashboardadminp/dashboardadminp/dashboardadminp.component';
+import { ConsulterdashboardagentComponent } from './espaceagentpointrelais/consulterdashboard/consulterdashboardagent.component';
+import { PointrelaisadminComponent } from './espaceadminpointrelais/pointrelaisadmin/pointrelaisadmin.component';
+import { DonneespersonnellesconsulterComponent } from './espaceadminplateforme/donneespersonnellesconsulter/donneespersonnellesconsulter.component';
+import { ModifierdonneesComponent } from './espaceadminplateforme/modifierdonnees/modifierdonnees.component';
+import { ChartModule } from 'angular-highcharts';
+import { DashComponent } from './dash/dash.component';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatCardModule } from '@angular/material/card';
+import { MatMenuModule } from '@angular/material/menu';
+import { AddpointsrelaisComponent } from './espaceadminplateforme/addpointsrelais/addpointsrelais.component';
 
 
 
@@ -68,7 +78,14 @@ import { CreeragentpointrelaisComponent } from './espaceadminpointrelais/creerag
     RetourcolisComponent,
     DashboardComponent,
     CreeragentpointrelaisComponent,
-    
+    DashboardadminpComponent,
+    ConsulterdashboardagentComponent,
+    PointrelaisadminComponent,
+    DonneespersonnellesconsulterComponent,
+    ModifierdonneesComponent,
+    DashComponent,
+    PointrelaisComponent,
+    AddpointsrelaisComponent,
   ],
   imports: [
     BrowserModule,
@@ -88,13 +105,18 @@ import { CreeragentpointrelaisComponent } from './espaceadminpointrelais/creerag
     MatFormFieldModule,
     MatListModule,
     MatSelectModule,
-
+ChartModule,
+MatGridListModule,
+MatCardModule,
+MatMenuModule,
   ],
   providers: [
   CookieService,
     provideClientHydration(),
         provideAnimationsAsync()
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  
 })
+
 export class AppModule { }

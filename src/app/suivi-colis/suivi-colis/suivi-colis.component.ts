@@ -10,7 +10,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class SuiviColisComponent {
   numeroColis: string | undefined; // Utilisez string pour gérer la longueur du numéro
   adresseColis: string | undefined ; 
-
+  imagePath: string = "../../assets/photos/souuuuuuudg_1 - Copie.png";
+  imagePath1: string = "../../assets/photos/souuuuuuudg_1 - Copie.png";
   constructor(
     private suiviColisService: SuiviColisService,
     private snackBar: MatSnackBar // Injectez MatSnackBar pour afficher des alertes

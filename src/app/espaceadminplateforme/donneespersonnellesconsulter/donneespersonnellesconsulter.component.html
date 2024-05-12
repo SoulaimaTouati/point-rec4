@@ -1,0 +1,29 @@
+<nav class="sidebar">
+    <app-sidebar></app-sidebar>
+    <router-outlet></router-outlet>
+    <div id="main" *ngIf="!isOpen" >
+      <button class="openbtn" (click)="openSidebar()" style="top: 50px;; position: fixed;">☰</button>    
+   </div>
+  </nav>
+  <section class="s1">
+    <div class="container">
+      <div>
+        Nom : {{nom}}
+      </div><br>
+      <div>
+        Prénom : {{prenom}}
+      </div><br> 
+      <div>
+        E-mail : {{email}}
+      </div><br>
+       <div>
+        Mot de passe : {{password}}
+      </div><br>
+      <div>
+        Numéro de téléphone : {{phone}}
+      </div>  
+      <input type="text" placeholder="{{nom}}" readonly>  
+      
+    </div>
+  </section>
+  

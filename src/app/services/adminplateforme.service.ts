@@ -8,6 +8,7 @@ import { Observable, catchError } from 'rxjs';
 })
 export class AdminplateformeService {
   private addurl = `http://localhost:3000/adminplateforme/creer`;
+  private url = `http://localhost:3000/adminplateforme`;
 
   constructor(private http: HttpClient) {}
 
@@ -17,5 +18,9 @@ export class AdminplateformeService {
         throw error;
       })
     );
+  }
+  modifierAdminPlateforme(adminModifie: AdminPlateforme): Observable<any> {
+    const url = `${this.url}/${adminModifie.nom}`;
+    return this.http.put<any>(url, adminModifie);
   }
 }

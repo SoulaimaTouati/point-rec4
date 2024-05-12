@@ -1,0 +1,20 @@
+<nav class="sidebar">
+    <app-sidebar></app-sidebar>
+    <router-outlet></router-outlet>
+    <div id="main" *ngIf="!isOpen">
+        <button class="openbtn" (click)="openSidebar()">☰</button>    
+    </div>
+</nav>   
+
+<section class="s1">
+    <div class="container">
+        <h2>Liste des points relais associés à l'administrateur: {{ name }} {{ lastname }}</h2>
+        <table class="table">
+            <!-- Votre table de points relais -->
+        </table>
+
+        <!-- Graphique en secteur Highcharts 
+        <highcharts-chart [options]="chart"></highcharts-chart>
+-->
+    </div>
+</section>
