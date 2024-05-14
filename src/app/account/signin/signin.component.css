@@ -3,7 +3,7 @@ body {
     background-color: white;
 }
 #form-1 {
-    border: 2px solid black;
+    border: 2px solid white;
     padding: 5px;
     max-width: 300px;
     display: flex;
@@ -15,7 +15,11 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     height: auto; 
-    background-color: rgb(249, 248, 248);
+    background-color: white;
+    border-radius: 50px;
+    opacity: 0.8;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5); 
+
 }
 
 .form-control {

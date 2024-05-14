@@ -1,130 +1,133 @@
-.side{
-  height: 10%;
-}
+
 body {
-   /* position: relative;
-    height: 100vh;
-    width: 250;
-    background: rgb(226, 226, 233);
-    margin: 0; /* Supprime la marge par défaut du body */
-    font-family: Arial, sans-serif; /* Assure une police de caractères appropriée */
-    position: absolute;
+   
+  font-family: Arial, sans-serif; 
+  position: absolute;
 display: none;
 top:0%;
-  }
-  nav {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    position: fixed;
-    width: 270px;
-    height: fit-content;
-    min-height: 350px;
-    color: white;
-    background-color: rgb(16, 35, 120);
-    top:7% ;
-  }
-  
-  nav span {
-    text-align: center;
-    padding: 20px 0;
-    font-size: 28px;
-    font-weight: 800;
-  }
-  
-  nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  nav li {
-    width: 100%;
-  }
-  
-  nav a {
-    display: block;
-    padding: 22px;
-    color: white;
-    text-decoration: none;
-    font-size: 20px;
-    transition: ease-in 0.2s;
-  }
-  
-  nav a:hover {
-    color: rgb(247, 111, 0);
-  }
-  
-  nav i {
-    margin-right: 10px;
-  }
-  
-  section {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    position: absolute;
-    top: 0;
-    left: 270px;
-    height: 100vh;
-    width: calc(100% - 270px);
-    padding: 30px;
-    transition: ease-in 0.3s;
-  }
-  
-  section h1 {
-    color: rgb(0, 0, 0);
-    font-size: 32px;
-    text-align: center;
-  }
-  
-.s1{
-    padding: 100px;
 }
+nav {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  position: fixed;
+  width: 270px;
+  height: fit-content;
+  min-height: 350px;
+  color: rgb(16, 35, 120);
+  /*
+  background-color: rgb(16, 35, 120);*/
+  background-color: white;
+  top:11% ;
+  opacity: 0.85;
+  border-top-right-radius: 50px; /* Adjust the value as needed */
+  border-bottom-right-radius: 50px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5); /* 5px horizontal offset, 5px vertical offset, 10px blur radius, 0.5 opacity */
+
+}
+
+nav span {
+  text-align: center;
+  padding: 20px ;
+  font-size: 28px;
+  font-weight: 800;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
 nav li {
-    width: auto;
-    border-bottom: 1px solid white; 
-    padding-bottom: 17px; 
-  }
-  
+  padding-bottom: 3.5px;
+  width: 270px;
+  border-bottom: 1px solid rgb(16, 35, 120); 
 
+}
+.li{
+  padding-bottom: 3.5px;
+  width: auto;
+  border-bottom: 1px solid rgb(16, 35, 120);
+}
 
-  .dropdown-menu {
-    display: none;
-    background-color: rgb(16, 35, 120);
-    position: absolute;
-    top: 0%;
-    left: 99%;
-   /* padding: 200;*/
-    z-index: 999;
-    width: 155%;
-  }
-  
-  .dropdown-menu.show {
-    display: block;
-  }
-  
-  nav button {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 24px;
-    margin: 10px;
-    cursor: pointer;
-  }
-.closebtn:hover{
+nav a {
+  display: block;
+  padding: 22px;
+  color: rgb(16, 35, 120);
+  text-decoration: none;
+  font-size: 20px;
+  transition: ease-in 0.1s;
+}
+
+nav a:hover {
   color: rgb(247, 111, 0);
 }
-.openbtn{
-  height: 6vh;
-  top: auto;
-  font-size: xx-large;
-  background-color: rgb(16, 35, 120);
+
+nav i {
+  margin-right: 10px;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  position: absolute;
+  top: 0;
+  left: 270px;
+  height: 100vh;
+  width: calc(100% - 270px);
+  padding: 30px;
+  transition: ease-in 0.3s;
+}
+
+section h1 {
+  color: rgb(0, 0, 0);
+  font-size: 32px;
+  text-align: center;
+}
+
+.s1{
+  padding: 100px;
+}
+
+.dropdown-menu {
+  display: none;
+  background-color: white;
+  opacity: 1;
+  position: absolute;
+  top: 0%;
+  left: 99%;
+ /* padding: 200;*/
+  z-index: 999;
+  width: auto;
+}
+
+.dropdown-menu.show {
+  display: block;
+}
+
+nav button {
+  background: none;
+  border: none;
   color: white;
+  font-size: 24px;
+  margin: 10px;
+  cursor: pointer;
+}
+.closebtn:hover{
+color: rgb(247, 111, 0);
+}
+.openbtn{
+height: 6vh;
+top: auto;
+font-size: xx-large;
+background-color: rgb(16, 35, 120);
+color: white;
 position: absolute;
 display: none;
 top:0%;
 }
 .openbtn:hover{
-  color: rgb(247, 111, 0);
+color: rgb(247, 111, 0);
 }

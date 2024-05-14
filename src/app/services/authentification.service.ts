@@ -4,6 +4,8 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { AdminPlateforme } from '../interface/admin-plateforme';
 import { CookieService } from 'ngx-cookie-service';
+import { AdminPointRelais } from '../interface/adminpointrelais';
+import { AgentPointRelais } from '../interface/agentpointrelais';
 @Injectable({
   providedIn: 'root'
 })
@@ -12,6 +14,9 @@ export class AuthentificationService {
 // URL de monAPI
   private adminplateforme = 'http://localhost:3000/authentification/adminplateforme';
   private url = 'http://localhost:3000/adminplateforme';
+  private url1 = 'http://localhost:3000/adminpointrelais'
+  private url2 = 'http://localhost:3000/agentpointsrelais'
+
 
   private loginnn=  'http://localhost:3000/authentification';
 
@@ -96,8 +101,12 @@ private email:string='';
 getAdminPlateformeByNom(nom: string): Observable<AdminPlateforme> {
   return this.http.get<AdminPlateforme>(`${this.url}/${nom}`);
 }
-
-
+getAdminPointrelaisByNom(nom: string): Observable<AdminPointRelais> {
+  return this.http.get<AdminPointRelais>(`${this.url1}/${nom}`);
+}
+getAgentPointrelaisByNom(nom: string): Observable<AgentPointRelais> {
+  return this.http.get<AgentPointRelais>(`${this.url2}/${nom}`);
+}
   getAllAdminPlateforme(): Observable<AdminPlateforme[]> {
     return this.http.get<AdminPlateforme[]>(this.adminplateforme);
   }

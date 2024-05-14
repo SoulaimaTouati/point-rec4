@@ -9,6 +9,7 @@ export interface PointRelais {
     nom_agent: string; 
     idadminpointrelais	: number; 
     Region:string;
+    
   }
 
  

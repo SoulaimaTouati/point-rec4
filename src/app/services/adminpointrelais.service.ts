@@ -35,5 +35,8 @@ export class AdminPointRelaisService {
     return this.http.get<any[]>(`${this.apiUrl}/search/${query}`);
   }
 
-
+  modifierAdminPointrelais(adminModifie: AdminPointRelais): Observable<any> {
+    const url = `${this.apiUrl}/${adminModifie.nom}`;
+    return this.http.put<any>(url, adminModifie);
+  }
 }

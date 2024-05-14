@@ -24,7 +24,7 @@
 /* dash.component.css */
 
 .point-relais-count-container {
-  display: inline-block;
+  display: relative;
   padding: 5px 10px;
   border: 2px solid #ccc;
   border-radius: 5px;
@@ -35,5 +35,38 @@
   font-weight: bold;
   color: #333;
 }
+.pie-chart-container {
+  position:fixed; /* Fixez la position du conteneur */
+  left: 0; /* Placez le conteneur tout à gauche de la fenêtre */
+  top: 50%; /* Facultatif : ajustez la position verticale selon vos besoins */
+  transform: translateY(-50%); /* Facultatif : pour centrer verticalement */
+  margin-left: 10px; /* Ajoutez une marge à gauche si nécessaire */
+}
+section {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  position: absolute;
+  top: 0;
+  left: 270px;
+  height: 100vh;
+  width: calc(100% - 270px);
+  padding: 30px;
+  transition: ease-in 0.3s;
+}
+.s1{
+  padding: 100px;
+}
+.container {
+  width: 900px;
+  margin: 5% auto;
+  padding: 20px;
+  text-align: center;
+  background-color: gray;
+  border-radius: 50px;
+  opacity: 0.8;
+  color: rgb(16, 35, 120);
+}
+
 
 

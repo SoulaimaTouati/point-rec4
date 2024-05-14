@@ -49,6 +49,11 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
 import { AddpointsrelaisComponent } from './espaceadminplateforme/addpointsrelais/addpointsrelais.component';
+import { ConsulterdonneepersonnelComponent } from './espaceagentpointrelais/consulterdonneepersonnel/consulterdonneepersonnel.component';
+import { DemandemodificationdonneeComponent } from './espaceagentpointrelais/demandemodificationdonnee/demandemodificationdonnee.component';
+import { DonneesadminpointComponent } from './espaceadminpointrelais/donneesadminpoint/donneesadminpoint.component';
+import { ModifierdonneesadminpointComponent } from './espaceadminpointrelais/modifierdonneesadminpoint/modifierdonneesadminpoint.component';
+import { ListepointrelaisComponent } from './espaceadminpointrelais/listepointrelais/listepointrelais.component';
 
 
 
@@ -86,6 +91,11 @@ import { AddpointsrelaisComponent } from './espaceadminplateforme/addpointsrelai
     DashComponent,
     PointrelaisComponent,
     AddpointsrelaisComponent,
+    ConsulterdonneepersonnelComponent,
+    DemandemodificationdonneeComponent,
+    DonneesadminpointComponent,
+    ModifierdonneesadminpointComponent,
+    ListepointrelaisComponent,
   ],
   imports: [
     BrowserModule,

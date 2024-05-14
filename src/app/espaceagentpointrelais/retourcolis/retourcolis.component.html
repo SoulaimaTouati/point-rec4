@@ -48,7 +48,7 @@
                   <th>date de l'expédition du Colis</th>
                   <th>date de livraison du colis</th>
                   <th>Etat du colis</th>
-                  <th>Délivré</th>
+                  <th>Retour</th>
                 </tr>
               </thead>
          
@@ -64,7 +64,7 @@
                   <td>{{coli.dateExpedition}}</td>
                   <td>{{coli.dateLivraison}}</td>
                   <td>{{coli.etatColis}}</td>
-                  <td><button class="btndelivre" (click)="marquerCommeEnretour(coli.num_Colis.toString())">retour</button></td>
+                  <td><button class="btnretour" (click)="marquerCommeEnretour(coli.num_Colis.toString())">retour</button></td>
                 </ng-container>
                 </tr>
               </tbody>

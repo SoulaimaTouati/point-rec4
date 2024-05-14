@@ -1,20 +1,19 @@
 import { Component } from '@angular/core';
 import { AprsidebarService } from '../../services/aprsidebar.service';
-import { CookieService } from 'ngx-cookie-service';
 import { AuthentificationService } from '../../services/authentification.service';
-import { AdminPointRelais } from '../../interface/adminpointrelais';
-import { AgentPointRelais } from '../../interface/agentpointrelais';
-import { AgentpointrelaisService } from '../../services/agentpointrelais.service';
+import { AdminplateformeService } from '../../services/adminplateforme.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { AdminPointRelais } from '../../interface/adminpointrelais';
+import { AdminPointRelaisService } from '../../services/adminpointrelais.service';
 
 @Component({
-  selector: 'app-demandemodificationdonnee',
-  templateUrl: './demandemodificationdonnee.component.html',
-  styleUrl: './demandemodificationdonnee.component.css'
+  selector: 'app-modifierdonneesadminpoint',
+  templateUrl: './modifierdonneesadminpoint.component.html',
+  styleUrl: './modifierdonneesadminpoint.component.css'
 })
-export class DemandemodificationdonneeComponent {
+export class ModifierdonneesadminpointComponent {
   constructor(private aprsidebar:AprsidebarService,private authService:AuthentificationService,
-    private agentservice:AgentpointrelaisService,private snackBar:MatSnackBar,
+    private adminpointrelaisservice:AdminPointRelaisService,private snackBar:MatSnackBar,
     
   ){}
 
@@ -24,7 +23,7 @@ export class DemandemodificationdonneeComponent {
  phone:number=0;
  userId:number=0;
  password:string='';
- agent:AgentPointRelais|undefined;
+ adminPointrelais:AdminPointRelais|undefined;
   isOpen: boolean = true;
 ngOnInit(): void {
     this.aprsidebar.isOpen$.subscribe(isOpen => {
@@ -33,15 +32,16 @@ ngOnInit(): void {
     this.nom = this.authService.getUsername();
     console.log(this.nom);
     const nom = this.nom; // Remplacez par le nom de l'administrateur souhaité
-      this.authService.getAgentPointrelaisByNom(nom).subscribe(
-        (agent: AgentPointRelais) => {
-          this.agent = agent;
-          console.log(this.agent); // Affichez les données récupérées dans la console
-          this.prenom = this.agent.prenom; 
-          this.phone = this.agent.numerotelephone; 
-          this.userId = this.agent.idagentpointrelais; 
-          this.password = this.agent.motdepasse; 
-          this.nom =this.agent.nom;
+      this.authService.getAdminPointrelaisByNom(nom).subscribe(
+        (adminPointrelais: AdminPointRelais) => {
+          this.adminPointrelais = adminPointrelais;
+          console.log(this.adminPointrelais); // Affichez les données récupérées dans la console
+          this.prenom = this.adminPointrelais.prenom; 
+          this.email = this.adminPointrelais.email; 
+          this.phone = this.adminPointrelais.numerotelephone; 
+          this.userId = this.adminPointrelais.idadminpointrelais; 
+          this.password = this.adminPointrelais.motdepasse; 
+          this.nom =this.adminPointrelais.nom;
   
         },
         error => {
@@ -58,16 +58,17 @@ ngOnInit(): void {
   nouveauPhone: number = 0; 
  modifier(): void {
   const { nouveauNom, nouveauPrenom, nouveauEmail, nouveauPhone } = this;
-  const agentmodifie: AgentPointRelais = {
-    idagentpointrelais:this.userId,
+  const adminModifie: AdminPointRelais = {
+    idadminpointrelais:this.userId,
     motdepasse:this.password,
     nom: nouveauNom || this.nom,
     prenom: nouveauPrenom || this.prenom,
+    email: nouveauEmail || this.email,
     numerotelephone: nouveauPhone || this.phone
   };
 
   // Appeler le service pour envoyer les données modifiées à l'API backend
-  this.agentservice.modifierAgent(agentmodifie).subscribe(
+  this.adminpointrelaisservice.modifierAdminPointrelais(adminModifie).subscribe(
     () => {
       console.log('Données administrateur modifiées avec succès !');
       this.snackBar.open('Données administrateur modifiées avec succès !', 'Fermer', {
@@ -83,8 +84,10 @@ ngOnInit(): void {
       this.ngOnInit();
     },
     error => {
-      console.error('Erreur lors de la modification des données de l agent :', error);
+      console.error('Erreur lors de la modification des données administrateur :', error);
     }
   );
- }}
+}
 
+  
+}

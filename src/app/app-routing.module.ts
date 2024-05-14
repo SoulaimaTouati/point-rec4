@@ -23,6 +23,11 @@ import { DonneespersonnellesconsulterComponent } from './espaceadminplateforme/d
 import { ModifierdonneesComponent } from './espaceadminplateforme/modifierdonnees/modifierdonnees.component';
 import { DashComponent } from './dash/dash.component';
 import { AddpointsrelaisComponent } from './espaceadminplateforme/addpointsrelais/addpointsrelais.component';
+import { ConsulterdonneepersonnelComponent } from './espaceagentpointrelais/consulterdonneepersonnel/consulterdonneepersonnel.component';
+import { DemandemodificationdonneeComponent } from './espaceagentpointrelais/demandemodificationdonnee/demandemodificationdonnee.component';
+import { DonneesadminpointComponent } from './espaceadminpointrelais/donneesadminpoint/donneesadminpoint.component';
+import { ModifierdonneesadminpointComponent } from './espaceadminpointrelais/modifierdonneesadminpoint/modifierdonneesadminpoint.component';
+import { ListepointrelaisComponent } from './espaceadminpointrelais/listepointrelais/listepointrelais.component';
 
 const routes: Routes = [
   {path:'suivis-colis',component:SuiviColisComponent},
@@ -48,7 +53,11 @@ const routes: Routes = [
   {path:'modifierdonnesplateforme',component:ModifierdonneesComponent},
   {path:'dash',component:DashComponent},
   {path: 'addpointsrelais',component:AddpointsrelaisComponent},
-
+  {path:'donnéesagent',component:ConsulterdonneepersonnelComponent},
+  {path:'changeagent',component:DemandemodificationdonneeComponent},
+{path:'donneeadminpoint',component:DonneesadminpointComponent},
+{path:'modifieradminpoint',component:ModifierdonneesadminpointComponent},
+{path:'listepointre',component:ListepointrelaisComponent},
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

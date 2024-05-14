@@ -157,15 +157,22 @@ color: rgb(247, 111, 0);
 font-size: medium;
 }
 
-.btnconsulter{
-border: 1.5px solid rgb(16, 35, 120);
-justify-content:space-around;
+.btnretour{
+  color:rgb(247, 111, 0) ;
+  background-color: rgb(16, 35, 120);
+  border: 1px solid rgb(16, 35, 120) ;
+  height: 30px; 
+  width: 100px;
+  font-size: large;
+  border-radius: 5px;
 
 }
-.btnconsulter:hover{
-background-color: rgb(16, 35, 120);
-color:rgb(247, 111, 0) ;
-
+input::placeholder {
+  color: rgb(247, 111, 0);
+  font-size: medium;
+  }
+.btnretour:hover{
+  background-color:white ;
 }
 
 
@@ -178,27 +185,9 @@ background-repeat: no-repeat;
 
 
 
-.btndelivre{
-  background-color:rgb(16, 35, 120) ;
-color: rgb(247, 111, 0);
-border: 2px solid rgb(16, 35, 120); 
-}
 
-.btndelivre:hover{
-background-color: white;
 
-}
 
-.btndelivre{
-  background-color:rgb(16, 35, 120) ;
-color: rgb(247, 111, 0);
-border: 2px solid rgb(16, 35, 120); 
-}
-
-.btndelivre:hover{
-background-color: white;
-
-}
 .bck{
   position: fixed;
 }
