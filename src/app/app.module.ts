@@ -102,7 +102,8 @@ import { ListepointrelaisComponent } from './espaceadminpointrelais/listepointre
     AppRoutingModule,
     RouterModule,
     CommonModule,
-    HttpClientModule,FormsModule,
+    HttpClientModule,
+
     FormsModule,
     MatSnackBarModule,
     BrowserAnimationsModule,
